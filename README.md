@@ -3,10 +3,8 @@ For more information on how to used androidrunner please visit the offical githu
 https://github.com/S2-group/android-runner
 
 ## Subject Selection
-Within the folder "subject-selection" you will find the following two scripts:
-
+Within the folder "subject-selection" you will find the following script:
 - website-downloader: This script is used to download the websites locally. However, each website needs to be manually checked for errors
-- trancoList: The following script returns the urls of the top 1000 websites within the tranco list
 
 ## Experiment 
 ### Changes made to the android runner
