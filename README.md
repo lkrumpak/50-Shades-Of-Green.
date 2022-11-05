@@ -22,3 +22,8 @@ Within the PerfumeJS folder, all of the websites are the same as the BatteryStat
 https://github.com/S2-group/android-runner/blob/master/docs/run_stop_condition_http_post_tips.md
 
 In addition to the website source code, the websites will have to be hosted locally. We used Apache HTTP Server. 
+
+## Data Analysis 
+
+All data gathered from the exerpiments can be found in the "data-analysis" folder. The data is split into two batches with each batch containing five runs.
+Additionally, you can find all R scripts used for the data analysis.
