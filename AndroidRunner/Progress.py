@@ -49,14 +49,15 @@ class Progress(object):
         return et.fromstring(experiment_xml)
 
     @staticmethod
-    def build_subject_xml(device, path, browser=None):
+    def build_subject_xml(device, path, profiler, browser=None):
         device_xml = '<device>{}</device>'.format(device)
         path_xml = '<path>{}</path>'.format(path)
+        profiler_xml = '<profiler>{}</profiler>'.format(profiler)
         if browser is not None:
             browser_xml = '<browser>{}</browser>'.format(browser)
-            return '{}{}{}'.format(device_xml, path_xml, browser_xml)
+            return '{}{}{}{}'.format(device_xml, path_xml, profiler_xml, browser_xml)
         else:
-            return '{}{}'.format(device_xml, path_xml)
+            return '{}{}'.format(device_xml, path_xml, profiler_xml)
 
     def build_runs_xml(self, config):
         runs_xml = ''
@@ -66,11 +67,12 @@ class Progress(object):
             for path in current_paths:
                 if config['type'] == 'web':
                     for browser in config['browsers']:
-                        subject_xml = self.build_subject_xml(device, path, browser)
-                        for run in range(config['repetitions']):
-                            runs_xml = runs_xml + '<run runId="{}">{}<runCount>{}</runCount></run>'. \
-                                format(run_id, subject_xml, run + 1)
-                            run_id += 1
+                        for profiler in config['profilers']:
+                            subject_xml = self.build_subject_xml(device, path, profiler, browser)
+                            for run in range(config['repetitions']):
+                                runs_xml = runs_xml + '<run runId="{}">{}<runCount>{}</runCount></run>'. \
+                                    format(run_id, subject_xml, run + 1)
+                                run_id += 1
                 else:
                     subject_xml = self.build_subject_xml(device, path)
                     for run in range(config['repetitions']):
@@ -109,6 +111,7 @@ class Progress(object):
         run['runId'] = run_xml.get('runId')
         run['device'] = run_xml.find('device').text
         run['path'] = run_xml.find('path').text
+        run['profiler'] = run_xml.find('profiler').text
         run['runCount'] = self.get_run_count(run_xml, run['device'], run['path'])
         browser = run_xml.find('browser')
         if browser is not None:

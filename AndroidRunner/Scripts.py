@@ -34,7 +34,10 @@ class Scripts(object):
 
                 self.scripts[name].append(script)
 
-    def run(self, name, device, *args, **kwargs):
+    def run(self, name, device, path='', *args, **kwargs):
         self.logger.debug('Running hook {} on device {}\nargs: {}\nkwargs: {}'.format(name, device, args, kwargs))
         for script in self.scripts.get(name, []):
-            script.run(device, *args, **kwargs)
+            if path == '':
+                script.run(device, *args, **kwargs)
+            else:
+                script.run(device, path, *args, **kwargs)

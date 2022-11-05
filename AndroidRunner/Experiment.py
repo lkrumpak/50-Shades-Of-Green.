@@ -47,6 +47,7 @@ class Experiment(object):
 
         self.run_stopping_condition_config = config.get("run_stopping_condition", None)
         self.queue = mp.Queue()
+        self.final_path = None
         
         if restart:
             for device in self.devices:
@@ -115,7 +116,7 @@ class Experiment(object):
     def run_run(self, current_run):
         if 'browser' in current_run:
             self.run(self.devices.get_device(current_run['device']), current_run['path'],
-                     int(current_run['runCount']), current_run['browser'])
+                     int(current_run['runCount']), current_run['browser'], current_run['profiler'])
         else:
             self.run(self.devices.get_device(current_run['device']), current_run['path'],
                      int(current_run['runCount']), None)
@@ -193,7 +194,7 @@ class Experiment(object):
         self.before_run(device, path, run)
 
         self.usb_handler.disable_usb()
-        self.start_profiling(device, path, run)
+        self.final_path = self.start_profiling(device, path, run)
 
         if self.run_stopping_condition_config:
             self.queue = mp.Queue()
@@ -226,25 +227,25 @@ class Experiment(object):
     def after_launch(self, device, path, run, *args, **kwargs):
         self.scripts.run('after_launch', device, device.id, device.current_activity(), *args, **kwargs)
 
-    def start_profiling(self, device, path, run, *args, **kwargs):
+    def start_profiling(self, device, path, profiler, run, *args, **kwargs):
         #FIXME: handle *args
-        self.profilers.start_profiling(device, **kwargs)
+        return self.profilers.start_profiling(device, path, profiler, **kwargs)
 
     def interaction(self, device, path, run, *args, **kwargs):
         """Interactions on the device to be profiled"""
-        self.scripts.run('interaction', device, self, *args, **kwargs)
+        self.scripts.run('interaction', device, path, self, *args, **kwargs)
 
-    def stop_profiling(self, device, path, run, *args, **kwargs):
+    def stop_profiling(self, device, path, profiler, run, *args, **kwargs):
         # FIXME: handle *args
-        self.profilers.stop_profiling(device, **kwargs)
+        self.profilers.stop_profiling(device, profiler, **kwargs)
 
     def before_close(self, device, path, run, *args, **kwargs):
         self.scripts.run('before_close', device, device.id, device.current_activity(), *args, **kwargs)
 
-    def after_run(self, device, path, run, *args, **kwargs):
+    def after_run(self, device, path, profiler, run, *args, **kwargs):
         """Hook executed after a run"""
         self.scripts.run('after_run', device, *args, **kwargs)
-        self.profilers.collect_results(device)
+        self.profilers.collect_results(device, profiler)
         Adb.reset(self.reset_adb_among_runs)
         self.logger.info('Sleeping for %s milliseconds' % self.time_between_run)
         time.sleep(self.time_between_run / 1000.0)

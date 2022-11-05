@@ -14,7 +14,8 @@ class USBHandler(object):
                 Dictionary containing the keys enable_command, disable_command
                 with the enable and disable commands as values, respectively.
         """
-        self._usb_enabled = True
+        print('======= Seting up USBHandler =======')
+        self._usb_enabled = False
 
         if usb_handler_config == None:
             self.usb_enable_command = None
@@ -31,7 +32,9 @@ class USBHandler(object):
         self.usb_enable_command = usb_handler_config["enable_command"]
         self.usb_disable_command = usb_handler_config["disable_command"]
 
-
+        self.enable_usb()
+        print(f'Initial usb power status is {self._usb_enabled}')
+        
     def enable_usb(self):
         """ Enables the USB port(s) is non-empty usb_handler_config is given when instantiating the class.
 
@@ -43,17 +46,21 @@ class USBHandler(object):
             USB port(s) does not seem to work ;).
         
         """
+        print('Enabling usb power...')
         # Check first whether USB port(s) are "really" disabled otherwise the call in Experiment.cleanup()
         # can result in disabled ports when using same enable and disable command.
         if self._usb_enabled == False:
             self._run_command(self.usb_enable_command)
             self._usb_enabled = True
+            print(f'Enabled usb power. Current status of usb is {self._usb_enabled}')
 
     def disable_usb(self):
         """ Disables the USB port(s) if non-empty usb_handler_config is given when instantiating the class."""
+        print('Disabling usb power...')   
         if self._usb_enabled == True:
             self._run_command(self.usb_disable_command)
             self._usb_enabled = False
+            print(f'Disaibled usb power. Current status of usb is {self._usb_enabled}')
 
     def _run_command(self, command):
         """ Runs given command
@@ -65,8 +72,11 @@ class USBHandler(object):
         """
         if command == None:
             return
-
+        print('====== USB COMMAND ======')
+        print(command)
         proc = subprocess.Popen(shlex.split(command), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        print(proc)
 
         try:
             (stdout, stderr) = proc.communicate(timeout=USBHandler.USB_COMMAND_TIMEOUT_SECONDS)

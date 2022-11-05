@@ -418,7 +418,6 @@ def parse_systrace(app, systrace_file, logcat, batterystats, power_profile, core
                         cpu_intensity = get_amp_value(power_profile, 'cpu.idle')
                     else:
                         cpu_intensity = get_amp_value(power_profile, activity, state)
-                    
                     energy_consumption = calculate_energy_usage(cpu_intensity, voltage, duration)
                     results.append('{},{},{},core {} {},{}'.format
                                    (time - start_time, end_time - start_time,
@@ -471,3 +470,4 @@ def parse_logcat(app, logcat_file, device_api_version):
         time_tuple = t.strptime('{}-{}'.format(year, app_stop_date), '%Y-%m-%d %H:%M:%S')
         unix_end_time = int(t.mktime(time_tuple)) * 1000 + int(app_stop_pattern.search(logcat).group(2))
         return unix_start_time, unix_end_time
+

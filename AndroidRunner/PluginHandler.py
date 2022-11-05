@@ -49,10 +49,21 @@ class PluginHandler(object):
         self.logger.debug('%s: %s: Loading configuration' % (self.moduleName, device))
         self.currentProfiler.load(device)
 
-    def start_profiling(self, device, **kwargs):
+    def start_profiling(self, device, path, **kwargs):
         """Start the profiling process"""
+        print(f'Current profiler: {self.moduleName}')
+        print(f'Current URL visisted: {path}')
+        
+        path_profiler = path.split('/')[3]
+
+        if self.moduleName.lower() != path_profiler.lower():
+            print(f'The current profiler running is {self.moduleName}, but the web app version for {path} is not compatible with this profiler plugin.')
+            print('Adjusting URL...')
+            path = path.replace(path_profiler, 'PerfumeJS') if path_profiler == 'BatteryStats' else  path.replace(path_profiler, 'BatteryStats')
         self.logger.debug('%s: %s: Start profiling' % (self.moduleName, device))
         self.currentProfiler.start_profiling(device, **kwargs)
+
+        return path
 
     def stop_profiling(self, device, **kwargs):
         """Stop the profiling process"""

@@ -40,6 +40,7 @@ class MonkeyRunner(Script):
         Returns the return value returned by MonkeyRunner.
         """
         super(MonkeyRunner, self).execute_script(device, *args, **kwargs)
+        print('Running script...')
         res = subprocess.run([self.monkeyrunner_path, self.monkey_playback_path, self.path], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         if (res.returncode != 0                                     or \
             b'java.net.SocketException: Broken pipe' in res.stdout  or \

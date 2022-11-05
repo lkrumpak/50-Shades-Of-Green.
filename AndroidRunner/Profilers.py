@@ -28,20 +28,34 @@ class Profilers(object):
                 p.load(device)
             self.loaded_devices.append(device.name)
 
-    def start_profiling(self, device, **kwargs):
+    def start_profiling(self, device, path, profiler='', **kwargs):
         self.logger.info('Start profiling')
         for p in self.profilers:
-            p.start_profiling(device, **kwargs)
+            if profiler:
+                if profiler.lower() == p.moduleName.lower():
+                    return p.start_profiling(device, path, **kwargs)
+            else:
+                p.start_profiling(device, path, **kwargs)
 
-    def stop_profiling(self, device, **kwargs):
+    def stop_profiling(self, device, profiler='', **kwargs):
         self.logger.info('Stop profiling')
         for p in self.profilers:
-            p.stop_profiling(device, **kwargs)
+            if profiler:
+                if profiler.lower() == p.moduleName.lower():
+                    p.stop_profiling(device, **kwargs)
+                    break
+            else:
+                p.stop_profiling(device, **kwargs)
 
-    def collect_results(self, device):
+    def collect_results(self, device, profiler=''):
         self.logger.info('Collecting results')
         for p in self.profilers:
-            p.collect_results(device)
+            if profiler:
+                if profiler.lower() == p.moduleName.lower():
+                    p.collect_results(device)
+                    break
+            else:
+                p.stop_profiling(device, **kwargs)
 
     def unload(self, device):
         self.logger.info('Unloading')

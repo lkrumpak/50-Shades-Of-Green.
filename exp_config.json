@@ -1,0 +1,88 @@
+{
+	"type": "web",
+	"devices": {
+		"nexus9": {}
+	},
+	"repetitions": 5,
+	"duration": 15000,
+	"clear_cache": true,
+	"randomization": true,
+	"time_between_run": 30000,
+	"browsers": ["chrome", "opera"],
+	"paths": [
+		"http://w3schools.com/BatteryStats/w3schools/w3schools-noAD/",
+		"http://w3schools.com/BatteryStats/w3schools/w3schools-noAnalytics/",
+		"http://w3schools.com/BatteryStats/w3schools/w3schools-full/",
+
+		"http://geeksforgeeks.org/BatteryStats/geeksforgeeks/geeksforgeeks-full/",
+		"http://geeksforgeeks.org/BatteryStats/geeksforgeeks/geeksforgeeks-noAD/",
+		"http://geeksforgeeks.org/BatteryStats/geeksforgeeks/geeksforgeeks-noAnalytics/",
+
+		"http://www.britannica.com/BatteryStats/britannica/britannica-full/",
+		"http://www.britannica.com/BatteryStats/britannica/britannica-noADS/",
+		"http://www.britannica.com/BatteryStats/britannica/britannica-noAnalytics/",
+
+		"http://independent.co.uk/BatteryStats/independent/independent-full/",
+		"http://independent.co.uk/BatteryStats/independent/independent-noADS/",
+		"http://independent.co.uk/BatteryStats/independent/independent-noAnalytics/",
+
+		"http://192.168.40.1/BatteryStats/theguardian/theguardian-noAD/",
+		"http://192.168.40.1/BatteryStats/theguardian/theguardian-noAD/",
+		"http://192.168.40.1/BatteryStats/theguardian/theguardian-noAnalytics/",
+
+		"http://192.168.40.1/BatteryStats/dailymail/dailymail-full/",
+		"http://192.168.40.1/BatteryStats/dailymail/dailymail-noADS/",
+		"http://192.168.40.1/BatteryStats/dailymail/dailymail-noAnalytics/",
+
+		"http://biomedcentral.com/BatteryStats/biomedcentral/biomedcentral-full/",
+		"http://biomedcentral.com/BatteryStats/biomedcentral/biomedcentral-noADS/",
+		"http://biomedcentral.com/BatteryStats/biomedcentral/biomedcentral-noAnalytics/",
+
+		"http://science.org/BatteryStats/science/science-full/",
+		"http://science.org/BatteryStats/science/science-noADS/",
+		"http://science.org/BatteryStats/science/science-noAnalytics/",
+
+		"http://scientificamerican.com/BatteryStats/scientificAmerican/scientificamerican-full/",
+		"http://scientificamerican.com/BatteryStats/scientificAmerican/scientificamerican-noADS/",
+		"http://scientificamerican.com/BatteryStats/scientificAmerican/scientificamerican-noAnalytics/"
+	],
+	"monkeyrunner_path": "/usr/bin/monkeyrunner",
+	"monkey_playback_path": "/usr/lib/android-sdk/tools/swt/monkeyrunner/scripts/monkey_playback.py",
+	"systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
+	"powerprofile_path": "/home/pi/green_shades/android-runner/Scripts/power_profile.xml",
+	"profilers": {
+    "batterystats": {
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7"
+    },
+		"perfume_js": {
+			"metrics": ["fcp", "tbt"]
+		}
+	},
+	"scripts": {
+		"before_experiment": [
+			{
+				"type": "python3",
+				"path": "Scripts/device_setup.py"
+			}
+		],
+		"before_run": "Scripts/before_run.py",
+		"after_launch": [
+			{
+				"type": "python3",
+				"path": "Scripts/browser_setup.py"
+			}
+		],
+		"interaction": [
+			{
+				"type": "python3",
+				"path": "Scripts/interaction.py"
+			}
+		],
+		"before_close": "Scripts/before_close.py",
+		"after_run": "Scripts/after_run.py",
+		"after_experiment": "Scripts/after_experiment.py"
+	},
+	"run_stopping_condition": {
+		"post_request": {}
+	}
+}

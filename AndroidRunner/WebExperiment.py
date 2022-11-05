@@ -16,7 +16,7 @@ class WebExperiment(Experiment):
         Tests.check_dependencies(self.devices, [b.package_name for b in self.browsers])
         self.duration = Tests.is_integer(config.get('duration', 0)) / 1000
 
-    def run(self, device, path, run, browser_name):
+    def run(self, device, path, run, browser_name, profiler):
         browser = None
         for browserItem in self.browsers:
             if browser_name in browserItem.to_string():
@@ -28,7 +28,7 @@ class WebExperiment(Experiment):
         self.after_launch(device, path, run, **kwargs)
 
         self.usb_handler.disable_usb()
-        self.start_profiling(device, path, run, **kwargs)
+        self.final_path = self.start_profiling(device, path, profiler, run, **kwargs)
 
         if self.run_stopping_condition_config:
             self.queue = mp.Queue()
@@ -37,11 +37,11 @@ class WebExperiment(Experiment):
         else:
             self.interaction(device, path, run, **kwargs)
 
-        self.stop_profiling(device, path, run, **kwargs)
+        self.stop_profiling(device, path, profiler, run, **kwargs)
         self.usb_handler.enable_usb()
 
         self.before_close(device, path, run, **kwargs)
-        self.after_run(device, path, run, **kwargs)
+        self.after_run(device, path, profiler, run, **kwargs)
 
     def last_run_subject(self, current_run):
         if self.progress.subject_finished(current_run['device'], current_run['path'], current_run['browser']):
@@ -65,6 +65,7 @@ class WebExperiment(Experiment):
         time.sleep(5)
 
     def interaction(self, device, path, run, *args, **kwargs):
+        path = self.final_path
         kwargs['browser'].load_url(device, path)
         time.sleep(5)
         super(WebExperiment, self).interaction(device, path, run, *args, **kwargs)
