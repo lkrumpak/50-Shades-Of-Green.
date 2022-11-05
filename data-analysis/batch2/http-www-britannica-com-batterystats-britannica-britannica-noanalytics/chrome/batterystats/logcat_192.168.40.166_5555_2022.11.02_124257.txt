@@ -1,0 +1,933 @@
+--------- beginning of main
+11-02 12:42:37.629  6149  6149 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:42:37.632  6149  6149 D AndroidRuntime: CheckJNI is OFF
+11-02 12:42:37.699  6149  6149 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:42:37.727  6149  6149 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:42:37.742  6149  6149 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+--------- beginning of system
+11-02 12:42:37.758   601  4276 I ActivityManager: Force stopping com.android.chrome appid=10035 user=0: from pid 6149
+11-02 12:42:37.758   601  4276 I ActivityManager: Killing 6067:com.android.chrome/u0a35 (adj 902): stop com.android.chrome
+11-02 12:42:37.758   601  4276 D ActivityManager: cleanUpApplicationRecord -- 6067
+11-02 12:42:37.769  1052  1052 D RegisteredNfcFServicesCache: Service unchanged, not updating
+11-02 12:42:38.017   601   819 I ActivityManager: START u0 {act=android.intent.action.VIEW flg=0x10008000 cmp=com.android.chrome/com.google.android.apps.chrome.Main} from uid 2000 on display 0
+11-02 12:42:38.045  6149  6149 D AndroidRuntime: Shutting down VM
+11-02 12:42:38.063   601  3564 I ActivityManager: Start proc 6159:com.android.chrome/u0a35 for activity com.android.chrome/com.google.android.apps.chrome.Main
+11-02 12:42:38.231   601  3564 I ActivityManager: START u0 {cmp=com.android.chrome/org.chromium.chrome.browser.firstrun.TabbedModeFirstRunActivity (has extras)} from uid 10035 on display 0
+11-02 12:42:38.245  6159  6176 W DynamiteModule: Local module descriptor class for com.google.android.gms.googlecertificates not found.
+11-02 12:42:38.349  6159  6169 W art     : Suspending all threads took: 7.194ms
+11-02 12:42:38.355  6159  6169 I art     : Background sticky concurrent mark sweep GC freed 4706(525KB) AllocSpace objects, 1(20KB) LOS objects, 18% free, 3MB/4MB, paused 7.898ms total 22.645ms
+11-02 12:42:38.391  6159  6177 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:38.392  6159  6177 I cr_CachingUmaRecorder: Flushed 10 samples from 10 histograms.
+11-02 12:42:38.403  6159  6176 I DynamiteModule: Considering local module com.google.android.gms.googlecertificates:0 and remote module com.google.android.gms.googlecertificates:6
+11-02 12:42:38.403  6159  6176 I DynamiteModule: Selected remote version of com.google.android.gms.googlecertificates, version >= 6
+11-02 12:42:38.445  6159  6178 I OpenGLRenderer: Initialized EGL, version 1.4
+11-02 12:42:38.445  6159  6178 D OpenGLRenderer: Swap behavior 2
+11-02 12:42:38.475   601   610 I art     : Background partial concurrent mark sweep GC freed 67346(2MB) AllocSpace objects, 15(880KB) LOS objects, 33% free, 15MB/23MB, paused 23.633ms total 161.967ms
+11-02 12:42:38.477  6159  6176 W System  : ClassLoader referenced unknown path: 
+11-02 12:42:38.485  6159  6176 D ApplicationLoaders: ignored Vulkan layer search path /data/app/com.google.android.gms-1/lib/arm:/data/app/com.google.android.gms-1/base.apk!/lib/armeabi-v7a:/data/app/com.google.android.gms-1/split_config.en.apk!/lib/armeabi-v7a for namespace 0xf387f090
+11-02 12:42:38.489  6159  6176 W ResourceType: ResTable_typeSpec entry count inconsistent: given 67, previously 69
+11-02 12:42:38.489  6159  6176 W ResourceType: ResTable_typeSpec entry count inconsistent: given 5346, previously 5347
+11-02 12:42:38.511  6159  6176 I DynamiteLoaderV2Impl: [70] Googlecertificates
+11-02 12:42:38.519  6159  6176 W System  : ClassLoader referenced unknown path: /data/user_de/0/com.google.android.gms/app_chimera/m/00000061/n/armeabi-v7a
+11-02 12:42:38.519  6159  6176 W System  : ClassLoader referenced unknown path: /data/user_de/0/com.google.android.gms/app_chimera/m/00000061/n/armeabi
+11-02 12:42:38.583   601   621 W WindowManager: Failed looking up window
+11-02 12:42:38.583   601   621 W WindowManager: java.lang.IllegalArgumentException: Requested window android.view.ViewRootImpl$W@904a115 does not exist
+11-02 12:42:38.583   601   621 W WindowManager: 	at com.android.server.wm.WindowManagerService.windowForClientLocked(WindowManagerService.java:9422)
+11-02 12:42:38.583   601   621 W WindowManager: 	at com.android.server.wm.WindowManagerService.windowForClientLocked(WindowManagerService.java:9413)
+11-02 12:42:38.583   601   621 W WindowManager: 	at com.android.server.wm.WindowManagerService.removeWindow(WindowManagerService.java:2393)
+11-02 12:42:38.583   601   621 W WindowManager: 	at com.android.server.wm.Session.remove(Session.java:202)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.view.ViewRootImpl.dispatchDetachedFromWindow(ViewRootImpl.java:3290)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.view.ViewRootImpl.doDie(ViewRootImpl.java:5917)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:3626)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.os.Looper.loop(Looper.java:154)
+11-02 12:42:38.583   601   621 W WindowManager: 	at android.os.HandlerThread.run(HandlerThread.java:61)
+11-02 12:42:38.583   601   621 W WindowManager: 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+11-02 12:42:38.604   601   621 I ActivityManager: Displayed com.android.chrome/org.chromium.chrome.browser.firstrun.TabbedModeFirstRunActivity: +334ms (total +564ms)
+11-02 12:42:38.610  6159  6173 D NetworkSecurityConfig: Using Network Security Config from resource 0_resource_name_obfuscated debugBuild: false
+11-02 12:42:38.629   785  1710 I FontLog : Received query Google Sans, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-02 12:42:38.629   785  1710 I FontLog : Query [Google Sans] resolved to {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-02 12:42:38.631   785  1710 I FontLog : Font PFD returned from cache for {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-02 12:42:38.631   785  1710 I FontLog : Fetch {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-02 12:42:38.648   785  1706 I FontLog : Pulling font file for id = 355, cache size = 6 [CONTEXT service_id=132 ]
+11-02 12:42:38.682   785  1765 E apju    : Phenotype API error. Event # cdub@a301068c, EventCode: 7 [CONTEXT service_id=51 ]
+11-02 12:42:38.682   785  1765 E apju    : apiz: 29505: No config packages for log source, or config package not registered
+11-02 12:42:38.682   785  1765 E apju    : 	at apkj.b(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:42:38.682   785  1765 E apju    : 	at apkg.b(:com.google.android.gms@203915020@20.39.15 (040406-335085812):2)
+11-02 12:42:38.682   785  1765 E apju    : 	at apju.a(:com.google.android.gms@203915020@20.39.15 (040406-335085812):85)
+11-02 12:42:38.682   785  1765 E apju    : 	at apju.a(:com.google.android.gms@203915020@20.39.15 (040406-335085812):80)
+11-02 12:42:38.682   785  1765 E apju    : 	at aain.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:42:38.682   785  1765 E apju    : 	at boex.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):2)
+11-02 12:42:38.682   785  1765 E apju    : 	at sup.b(:com.google.android.gms@203915020@20.39.15 (040406-335085812):12)
+11-02 12:42:38.682   785  1765 E apju    : 	at sup.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:42:38.682   785  1765 E apju    : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+11-02 12:42:38.682   785  1765 E apju    : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+11-02 12:42:38.682   785  1765 E apju    : 	at tam.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):0)
+11-02 12:42:38.682   785  1765 E apju    : 	at java.lang.Thread.run(Thread.java:761)
+11-02 12:42:38.684   785  1765 E AsyncOperation: serviceID=51, operation=GetExperimentTokensOperationCall [CONTEXT service_id=259 ]
+11-02 12:42:38.684   785  1765 E AsyncOperation: OperationException[Status{statusCode=No config packages for log source, or config package not registered, resolution=null}]
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at apju.a(:com.google.android.gms@203915020@20.39.15 (040406-335085812):87)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at apju.a(:com.google.android.gms@203915020@20.39.15 (040406-335085812):80)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at aain.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at boex.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):2)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at sup.b(:com.google.android.gms@203915020@20.39.15 (040406-335085812):12)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at sup.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at tam.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):0)
+11-02 12:42:38.684   785  1765 E AsyncOperation: 	at java.lang.Thread.run(Thread.java:761)
+11-02 12:42:38.703   785  1608 I FontLog : Received query Google Sans:500, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+11-02 12:42:38.703   785  1608 I FontLog : Query [Google Sans:500] resolved to {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-02 12:42:38.705   785  1608 I FontLog : Font PFD returned from cache for {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+11-02 12:42:38.705   785  1608 I FontLog : Fetch {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+11-02 12:42:38.713   785   804 I FontLog : Pulling font file for id = 356, cache size = 6 [CONTEXT service_id=132 ]
+11-02 12:42:38.815 26552 26563 W SearchService: Abort, client detached.
+11-02 12:42:38.819  1065  1065 I MemoryTrimmer: Trimming objects from memory, since app is in the background.
+11-02 12:42:38.826 26552  6038 I DeviceStateChecker: DeviceStateChecker cancelled
+11-02 12:42:38.826 26552 26552 I MicroDetector: Keeping mic open: false
+11-02 12:42:38.831 26552 26609 I AudioController: internalShutdown
+11-02 12:42:38.831 26552 27106 I MicroRecognitionRunner: Stopping hotword detection.
+11-02 12:42:38.831 26552 26609 I MicrophoneInputStream: mic_close com.google.android.apps.gsa.speech.audio.ae@e649abc
+11-02 12:42:38.834 26552 26552 I MemoryTrimmer: Trimming objects from memory, since app is in the background.
+11-02 12:42:38.858   237   285 I SoundTriggerHwService::Module: void android::SoundTriggerHwService::Module::onCallbackEvent(const sp<android::SoundTriggerHwService::CallbackEvent> &) mClient == 0
+11-02 12:42:38.867 26552  6037 I MicroRecognitionRunner: Detection finished
+11-02 12:42:38.884 26552 26552 I MemoryTrimmer: Trimming objects from memory, since app is in the background.
+11-02 12:42:38.885  6159  6173 I cr_VariationsSeedFetch: Fetched first run seed in 279 ms
+11-02 12:42:38.922   601 12301 I ActivityManager: Start proc 6193:com.android.chrome:sandboxed_process0/u0i985 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService0
+11-02 12:42:38.974  6193  6193 W dboxed_process0: type=1400 audit(0.0:3202): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:39.004  6193  6193 I cr_ChildProcessService: Creating new ChildProcessService pid=6193
+11-02 12:42:39.106   601   660 I ActivityManager: Start proc 6220:com.android.chrome:privileged_process0/u0a35 for service com.android.chrome/org.chromium.content.app.PrivilegedProcessService0
+11-02 12:42:39.201  6220  6220 I cr_ChildProcessService: Creating new ChildProcessService pid=6220
+11-02 12:42:39.206  6159  6182 W ConnectionStatusConfig: Dynamic lookup for intent failed for action: com.google.android.gms.auth.key.retrieval.service.START
+11-02 12:42:39.243  6220  6235 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:39.244  6220  6235 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:39.254  6159  6182 W ConnectionStatusConfig: Dynamic lookup for intent failed for action: com.google.android.gms.auth.key.retrieval.service.START
+11-02 12:42:39.267   601 12301 W ActivityManager: Unable to start service Intent { act=com.google.android.gms.auth.key.retrieval.service.START pkg=com.google.android.gms } U=0: not found
+11-02 12:42:39.267   601  9611 W ActivityManager: Unbind failed: could not find connection for android.os.BinderProxy@c73bec1
+11-02 12:42:39.268  6159  6182 E GmsClient: unable to connect to service: com.google.android.gms.auth.key.retrieval.service.START on com.google.android.gms
+11-02 12:42:39.274  6220  6235 E libEGL  : validate_display:99 error 3008 (EGL_BAD_DISPLAY)
+11-02 12:42:39.282  6159  6159 W cr_KnoxSettingsProvider: Permission to read device policy denied.
+11-02 12:42:48.856   601   648 I WifiHAL : Got channel list with 13 channels
+11-02 12:42:48.862   601   648 I WifiHAL : Got channel list with 4 channels
+11-02 12:42:48.864   601   648 I WifiHAL : Got channel list with 15 channels
+11-02 12:42:48.968 26552 26552 I MemoryTrimmer: Trimming objects from memory, since app is in the background.
+11-02 12:42:51.169  6264  6264 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:42:51.172  6264  6264 D AndroidRuntime: CheckJNI is OFF
+11-02 12:42:51.239  6264  6264 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:42:51.270  6264  6264 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:42:51.285  6264  6264 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+11-02 12:42:51.351   601   614 W BroadcastQueue: Skipping deliver [background] BroadcastRecord{b5f9e69 u-1 android.net.conn.CONNECTIVITY_CHANGE} to ReceiverList{830a0ee 6264 (unknown name)/2000/u-1 remote:7bdfd33}: process crashing
+11-02 12:42:52.952  6264  6264 D MonkeyStub: translateCommand: wake
+11-02 12:42:53.074  6264  6264 D MonkeyStub: translateCommand: tap 398 1198
+11-02 12:42:55.151  6264  6264 D MonkeyStub: translateCommand: tap 720 1506
+11-02 12:42:55.336 30982 30995 I PeopleChimeraService: onService. callbacks = aaik@a3be9e3, request = com.google.android.gms.common.internal.GetServiceRequest@557efe0
+11-02 12:42:55.352 30982 31100 I PeopleChimeraService: onService. callbacks = aaik@6fa395e, request = com.google.android.gms.common.internal.GetServiceRequest@2b9413f
+11-02 12:42:57.400  6264  6264 D MonkeyStub: translateCommand: tap 355 1480
+11-02 12:42:57.418  6264  6264 D MonkeyStub: Quit requested
+11-02 12:42:57.452   601  3564 I ActivityManager: START u0 {act=android.intent.action.VIEW flg=0x10008000 cmp=com.android.chrome/com.google.android.apps.chrome.Main (has extras)} from uid 10035 on display 0
+11-02 12:42:57.505  6264  6264 I art     : System.exit called, status: 6
+11-02 12:42:57.505  6264  6264 I AndroidRuntime: VM exiting with result code 6.
+11-02 12:42:57.507   601   615 I CwMcuSensor: CwMcuSensor::flush: fd = 213, sensors_id = 0, path = /sys/class/htc_sensorhub/sensor_hub/flush, err = 0
+11-02 12:42:57.635   601  9643 W WindowManager: Attempted to remove non-existing token: android.os.Binder@3d1398f
+11-02 12:42:57.639  6159  6159 E cr_CompositorSurfaceMgr: Transitioning to surface with format : -1
+11-02 12:42:57.681   601   610 I art     : Background partial concurrent mark sweep GC freed 30419(1511KB) AllocSpace objects, 8(176KB) LOS objects, 33% free, 15MB/23MB, paused 823us total 162.191ms
+11-02 12:42:57.720  6159  6216 W cr_tabmodel: Starting to perform legacy migration.
+11-02 12:42:57.722  6159  6216 W cr_tabmodel: Finished performing legacy migration.
+11-02 12:42:57.722  6159  6216 W cr_tabmodel: Starting to perform multi-instance migration.
+11-02 12:42:57.723  6159  6216 W cr_tabmodel: Finished performing multi-instance migration.
+11-02 12:42:57.723  6159  6216 I cr_tabmodel: Starting to fetch tab list for tab_state0
+11-02 12:42:57.723  6159  6216 I cr_tabmodel: State file does not exist.
+11-02 12:42:57.723  6159  6216 I cr_tabmodel: Starting to fetch tab list for tab_state1
+11-02 12:42:57.725  6159  6216 I cr_tabmodel: State file does not exist.
+11-02 12:42:57.767  6159  6216 I cr_ADCP : No customization source found
+11-02 12:42:57.806   601   621 I ActivityManager: Displayed com.android.chrome/com.google.android.apps.chrome.Main: +304ms
+11-02 12:42:57.856   601 12301 E BatteryStatsService: power: Missing API
+11-02 12:42:57.868  6159  6178 D OpenGLRenderer: endAllActiveAnimators on 0xd3afd600 (InsetDrawable) with handle 0xd2bf88d0
+11-02 12:42:57.870   799   799 E PhoneInterfaceManager: [PhoneIntfMgr] queryModemActivityInfo: Empty response
+11-02 12:42:57.871   601 12301 E BatteryStatsService: no controller energy info supplied
+11-02 12:42:57.876  6159  6159 E cr_CompositorSurfaceMgr: Transitioning to surface with format : -1
+11-02 12:42:57.880  6159  6159 E cr_CompositorSurfaceMgr: surfaceCreated format : 0
+11-02 12:42:57.887  6159  6159 I cr_ContextualSearch: Tap suppression enabled: false
+11-02 12:42:57.889   601 12301 E BatteryStatsService: modem info is invalid: ModemActivityInfo{ mTimestamp=0 mSleepTimeMs=0 mIdleTimeMs=0 mTxTimeMs[]=[0, 0, 0, 0, 0] mRxTimeMs=0 mEnergyUsed=0}
+11-02 12:42:57.893  6159  6159 I cr_ChromeTabbedActivity: #initializeState
+11-02 12:42:57.893  6159  6159 I cr_CipherFactory: #restoreFromBundle, no savedInstanceState.
+11-02 12:42:57.893  6159  6159 I cr_tabmodel: #loadState, ignoreIncognitoFiles? true
+11-02 12:42:58.034  6159  6159 I SchedulerApiWrapper: Create SchedulerApiMainThreadWrapper
+11-02 12:42:58.048  6159  6159 I FeedSessionManagerImpl: FeedSessionManagerImpl has been created
+11-02 12:42:58.049  6159  6159 I FeedAppLifecycleLstnr: onEnterForeground called
+11-02 12:42:58.049  6159  6159 I FeedSessionManagerImpl: onLifecycleEvent foreground
+11-02 12:42:58.050  6159  6159 I FeedSessionManagerImpl: Lazy initialization triggered, getUpdateConsumer
+11-02 12:42:58.050  6159  6216 I TaskQueue: Execute task [IMMEDIATE - d: true, b: 0]: 30
+11-02 12:42:58.050  6159  6159 I FeedRequestManagerImpl: trigger refresh 2
+11-02 12:42:58.050  6159  6159 I TaskQueue:  - task [HEAD_INVALIDATE - d: true, b: 0]: 26
+11-02 12:42:58.065  6159  6216 W SessionCache: Persisted Sessions were not found
+11-02 12:42:58.065  6159  6216 I HeadSessionImpl: Initialize HEAD 0 items
+11-02 12:42:58.066  6159  6216 I TaskQueue:  - task [BACKGROUND - d: true, b: 1]: 11
+11-02 12:42:58.066  6159  6216 I TimingUtils: Task Timing  15ms, thread JardinExecutor | task : Initialization
+11-02 12:42:58.066  6159  6216 I TaskQueue:  - Finished 30, time 16 ms
+11-02 12:42:58.066  6159  6216 I TaskQueue: Execute task [HEAD_INVALIDATE - d: true, b: 1]: 26
+11-02 12:42:58.067  6159  6216 I TimingUtils: Task Timing   0ms, thread JardinExecutor | task : getAllDismissLocalActions | size : 0
+11-02 12:42:58.067  6159  6216 I TimingUtils: Task Timing   0ms, thread JardinExecutor | task : getSemanticProperties | size : 0
+11-02 12:42:58.067  6159  6216 I MainThreadRunner: Running task [Check Tooltips] on the Main Thread
+11-02 12:42:58.069  6159  6216 I TaskQueue:  * Starting starvation checks
+11-02 12:42:58.069  6159  6216 I MainThreadRunner: Running task [starvationChecks] on the Main Thread with a delay of 6000 milliseconds
+11-02 12:42:58.069  6159  6216 I TaskQueue:  - Finished 26, time 3 ms
+11-02 12:42:58.136  6159  6159 I PlayCore: UID: [10035]  PID: [6159] SplitInstallService : deferredInstall([image_editor])
+11-02 12:42:58.140  6159  6295 I PlayCore: UID: [10035]  PID: [6159] SplitInstallService : Initiate binding to the service.
+11-02 12:42:58.141   601 15862 W ActivityManager: Unable to start service Intent { act=com.google.android.play.core.splitinstall.BIND_SPLIT_INSTALL_SERVICE pkg=com.android.vending } U=0: not found
+11-02 12:42:58.163  6159  6295 I PlayCore: UID: [10035]  PID: [6159] SplitInstallService : Failed to bind to the service.
+11-02 12:42:58.327  6159  6159 I FeedAppLifecycleLstnr: initialize called
+11-02 12:42:58.327  6159  6159 I FeedSessionManagerImpl: onLifecycleEvent initialize
+11-02 12:42:58.327  6159  6159 W FeedSessionManagerImpl: FeedSessionManagerImpl has previously been initialized
+11-02 12:42:58.353  6159  6159 I ViewConfigCompat: Could not find method getScaledScrollFactor() on ViewConfiguration
+11-02 12:42:58.357  6159  6159 I BasicStream: Setting 2 header views, currently have 0 headers
+11-02 12:42:58.358  6159  6159 I BasicStream: Setting 2 header views, currently have 2 headers
+11-02 12:42:58.417   601   620 D BluetoothManagerService: Message: 20
+11-02 12:42:58.417   601   620 D BluetoothManagerService: Added callback: android.bluetooth.IBluetoothManagerCallback$Stub$Proxy@432b926:true
+11-02 12:42:58.440  6193  6206 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:58.442  6193  6206 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:58.445  6159  6159 E cr_IntentUtils: getBooleanExtra failed on intent null
+11-02 12:42:58.467  6159  6159 I TimeoutSessionImpl: Using TimeoutSessionImpl
+11-02 12:42:58.468  6159  6159 I FeedSessionManagerImpl: shouldSessionRequestData; hasContent(false), contentCreationTime(0), outstandingRequest(true)
+11-02 12:42:58.468  6159  6159 I FeedSessionManagerImpl: shouldSessionRequestDataResult: NO_REQUEST_WITH_WAIT, shouldMakeRequest(false), withTimeout(false), withAppend(false)
+11-02 12:42:58.470  6159  6159 I TaskQueue:  - task [USER_FACING - d: true, b: 1]: 24
+11-02 12:42:58.471  6159  6159 I MainThreadRunner: Running task [BasicStream onShow] on the Main Thread with a delay of 500 milliseconds
+11-02 12:42:58.523   601   832 I ActivityManager: Start proc 6297:com.android.chrome:sandboxed_process1/u0i986 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService1
+11-02 12:42:58.562   601  3864 I ActivityManager: Start proc 6306:com.android.chrome:sandboxed_process2/u0i987 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService2
+11-02 12:42:58.599   601 15862 I ActivityManager: Start proc 6312:com.android.chrome:sandboxed_process3/u0i988 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService3
+11-02 12:42:58.647   601  7042 I ActivityManager: Start proc 6331:com.android.chrome:sandboxed_process4/u0i989 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService4
+11-02 12:42:58.662  6159  6159 I Choreographer: Skipped 51 frames!  The application may be doing too much work on its main thread.
+11-02 12:42:58.680   601 19770 I ActivityManager: Start proc 6346:com.android.chrome:sandboxed_process5/u0i990 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService5
+11-02 12:42:58.752   601  1452 I ActivityManager: Start proc 6363:com.android.chrome:sandboxed_process6/u0i991 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService6
+11-02 12:42:58.823   601  3564 I ActivityManager: Start proc 6375:com.android.chrome:sandboxed_process7/u0i992 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService7
+11-02 12:42:58.834  6159  6159 I TaskQueue:  - task [IMMEDIATE - d: true, b: 2]: 27
+11-02 12:42:58.834  6159  6159 I TaskQueue:  - queueTask starting immediate task
+11-02 12:42:58.834  6159  6215 I TaskQueue: Execute task [IMMEDIATE - d: true, b: 2]: 27
+11-02 12:42:58.837  6159  6215 I FeedRequestManagerImpl: Consistency Token: # hU2@7bca4
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: FEED_UI
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: UNDOABLE_ACTIONS
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: MANAGE_INTERESTS
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: SEND_FEEDBACK
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: ARTICLE_SNIPPETS
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: CLICK_ACTION
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: VIEW_ACTION
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: REPORT_FEED_USER_ACTIONS_NOTICE_CARD
+11-02 12:42:58.864  6159  6215 I FeedRequestManagerImpl: Capability: BASE_UI
+11-02 12:42:58.884  6297  6297 W dboxed_process1: type=1400 audit(0.0:3203): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:58.887   601   660 I ActivityManager: Start proc 6389:com.android.chrome:sandboxed_process8/u0i993 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService8
+11-02 12:42:58.898  6159  6215 I FeedRequestManagerImpl: Making Request: /httpservice/noretry/DiscoverClankService/FeedQuery
+11-02 12:42:58.899  6159  6215 I MainThreadRunner: Running task [NetworkClientWrapper send] on the Main Thread
+11-02 12:42:58.899  6159  6215 I TaskQueue:  - Finished 27, time 65 ms
+11-02 12:42:58.934  6306  6306 W dboxed_process2: type=1400 audit(0.0:3204): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:58.984  6312  6312 W dboxed_process3: type=1400 audit(0.0:3205): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:58.994  6331  6331 W dboxed_process4: type=1400 audit(0.0:3206): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.129  6297  6297 I cr_ChildProcessService: Creating new ChildProcessService pid=6297
+11-02 12:42:59.148  6306  6306 I cr_ChildProcessService: Creating new ChildProcessService pid=6306
+11-02 12:42:59.151  6346  6346 W dboxed_process5: type=1400 audit(0.0:3207): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.163  6159  6169 I art     : Background sticky concurrent mark sweep GC freed 42698(2MB) AllocSpace objects, 46(940KB) LOS objects, 23% free, 10MB/13MB, paused 6.079ms total 170.294ms
+11-02 12:42:59.168  6363  6363 W dboxed_process6: type=1400 audit(0.0:3208): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.171  6375  6375 W dboxed_process7: type=1400 audit(0.0:3209): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.187  6331  6331 I cr_ChildProcessService: Creating new ChildProcessService pid=6331
+11-02 12:42:59.196  6312  6312 I cr_ChildProcessService: Creating new ChildProcessService pid=6312
+11-02 12:42:59.212  6159  6159 I cr_tabmodel: Appending tabs being restored to metadata lists, 0, startingNormalCount: 1, startingIncognitoCount: 0
+11-02 12:42:59.212  6159  6159 I cr_tabmodel: Serializing tab lists; counts: 1, 0
+11-02 12:42:59.281  6389  6389 W dboxed_process8: type=1400 audit(0.0:3210): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.367  6363  6363 I cr_ChildProcessService: Creating new ChildProcessService pid=6363
+11-02 12:42:59.383  6346  6346 I cr_ChildProcessService: Creating new ChildProcessService pid=6346
+11-02 12:42:59.402   601   660 I ActivityManager: Start proc 6420:com.android.chrome:sandboxed_process9/u0i994 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService9
+11-02 12:42:59.429  6159  6213 W cr_CrashFileManager: /data/user/0/com.android.chrome/cache/Crash Reports does not exist or is not a directory
+11-02 12:42:59.429  6159  6213 W cr_CrashFileManager: /data/user/0/com.android.chrome/cache/Crash Reports does not exist or is not a directory
+11-02 12:42:59.429  6159  6213 W cr_CrashFileManager: /data/user/0/com.android.chrome/cache/Crash Reports does not exist or is not a directory
+11-02 12:42:59.441  6375  6375 I cr_ChildProcessService: Creating new ChildProcessService pid=6375
+11-02 12:42:59.453  6159  6213 I cr_FileUtils: Writing to /data/user/0/com.android.chrome/app_dex/webapk7.dex
+11-02 12:42:59.455  6159  6192 I cr_BindingManager: Moderate binding enabled: maxSize=40
+11-02 12:42:59.498  6306  6410 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.499  6306  6410 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.512  6297  6409 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.513  6297  6409 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.540  6312  6412 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.540  6312  6412 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.598  6389  6389 I cr_ChildProcessService: Creating new ChildProcessService pid=6389
+11-02 12:42:59.640 30982 31531 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.android.chrome componentName=null serviceId=36
+11-02 12:42:59.643  6331  6411 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.643  6331  6411 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.751  6420  6420 W dboxed_process9: type=1400 audit(0.0:3211): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:42:59.775  6363  6417 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.779  6363  6417 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.782  6346  6419 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.783  6346  6419 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.785  6375  6425 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.785  6375  6425 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.854  6331  6411 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:42:59.857  6375  6425 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:42:59.857  6346  6419 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:42:59.857  6363  6417 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:42:59.869   195   195 E lowmemorykiller: Error writing /proc/6331/oom_score_adj; errno=22
+11-02 12:42:59.872   195   195 E lowmemorykiller: Error writing /proc/6363/oom_score_adj; errno=22
+11-02 12:42:59.873   195   195 E lowmemorykiller: Error writing /proc/6346/oom_score_adj; errno=22
+11-02 12:42:59.875   195   195 E lowmemorykiller: Error writing /proc/6375/oom_score_adj; errno=22
+11-02 12:42:59.877  6389  6437 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:42:59.885  6389  6437 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:42:59.904   601  3564 I ActivityManager: Start proc 6461:com.android.chrome:sandboxed_process10/u0i995 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService10
+11-02 12:42:59.907   601  1452 I ActivityManager: Process com.android.chrome:sandboxed_process5 (pid 6346) has died
+11-02 12:42:59.907   601  1452 D ActivityManager: cleanUpApplicationRecord -- 6346
+11-02 12:42:59.909  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6363)
+11-02 12:42:59.909  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6346)
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6375:com.android.chrome:sandboxed_process7/u0a35i992 (adj 0): isolated not needed
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6363:com.android.chrome:sandboxed_process6/u0a35i991 (adj 0): isolated not needed
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6331:com.android.chrome:sandboxed_process4/u0a35i989 (adj 0): isolated not needed
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6306:com.android.chrome:sandboxed_process2/u0a35i987 (adj 0): isolated not needed
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6297:com.android.chrome:sandboxed_process1/u0a35i986 (adj 0): isolated not needed
+11-02 12:42:59.910   601  1452 I ActivityManager: Killing 6312:com.android.chrome:sandboxed_process3/u0a35i988 (adj 0): isolated not needed
+11-02 12:42:59.912   601  1452 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:42:59.914  6159  6192 I cr_BindingManager: onTrimMemory: level=15, size=0
+11-02 12:42:59.917  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6331)
+11-02 12:42:59.937   601   612 D ActivityManager: cleanUpApplicationRecord -- 6363
+11-02 12:42:59.938   601   611 D ActivityManager: cleanUpApplicationRecord -- 6331
+11-02 12:42:59.961  6420  6420 I cr_ChildProcessService: Creating new ChildProcessService pid=6420
+11-02 12:42:59.990  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6375)
+11-02 12:43:00.030   601 12691 D ActivityManager: cleanUpApplicationRecord -- 6375
+11-02 12:43:00.033  6389  6437 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:00.039   601  3864 I ActivityManager: Killing 6389:com.android.chrome:sandboxed_process8/u0a35i993 (adj 0): isolated not needed
+11-02 12:43:00.060   601  7042 I ActivityManager: Start proc 6481:com.android.chrome:sandboxed_process11/u0i996 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService11
+11-02 12:43:00.164  6461  6461 W boxed_process10: type=1400 audit(0.0:3212): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:00.189   601  9663 I ActivityManager: Start proc 6494:com.android.chrome:sandboxed_process12/u0i997 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService12
+11-02 12:43:00.230  6159  6169 W art     : Suspending all threads took: 7.438ms
+11-02 12:43:00.323  6420  6472 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:00.323  6420  6472 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:00.323  6293  6293 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:43:00.361  6481  6481 W boxed_process11: type=1400 audit(0.0:3213): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:00.380  6461  6461 I cr_ChildProcessService: Creating new ChildProcessService pid=6461
+11-02 12:43:00.383  6432  6432 I dex2oat : /system/bin/dex2oat --dex-file=/data/user/0/com.android.chrome/app_dex/webapk7.dex --oat-fd=210 --oat-location=/data/user/0/com.android.chrome/app_dex/oat/arm/webapk7.dex --compiler-filter=speed
+11-02 12:43:00.384  6293  6293 D AndroidRuntime: CheckJNI is OFF
+11-02 12:43:00.410  6159  6169 I art     : Background partial concurrent mark sweep GC freed 72508(3MB) AllocSpace objects, 24(492KB) LOS objects, 39% free, 10MB/17MB, paused 10.606ms total 302.873ms
+11-02 12:43:00.441  6494  6494 W boxed_process12: type=1400 audit(0.0:3214): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:00.479   601   660 I ActivityManager: Start proc 6513:com.android.chrome:sandboxed_process13/u0i998 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService13
+11-02 12:43:00.499  6420  6472 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:00.527   601 10729 I ActivityManager: Start proc 6518:com.android.chrome:sandboxed_process14/u0i999 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService14
+11-02 12:43:00.527   601  1452 I ActivityManager: Process com.android.chrome:sandboxed_process9 (pid 6420) has died
+11-02 12:43:00.527   601  1452 D ActivityManager: cleanUpApplicationRecord -- 6420
+11-02 12:43:00.528   601  1452 W ActivityManager: Scheduling restart of crashed service com.android.chrome/org.chromium.content.app.SandboxedProcessService9 in 1000ms
+11-02 12:43:00.533  6481  6481 I cr_ChildProcessService: Creating new ChildProcessService pid=6481
+11-02 12:43:00.541  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6420)
+11-02 12:43:00.617  6461  6509 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:00.618  6461  6509 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:00.639  6494  6494 I cr_ChildProcessService: Creating new ChildProcessService pid=6494
+11-02 12:43:00.699   601 12691 I ActivityManager: Start proc 6544:com.android.chrome:sandboxed_process15/u0i0 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService15
+11-02 12:43:00.753   601  3864 I ActivityManager: Start proc 6549:com.android.chrome:sandboxed_process16/u0i1 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService16
+11-02 12:43:00.762  6461  6509 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:00.771  6513  6513 W boxed_process13: type=1400 audit(0.0:3215): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:00.789   601  9643 I ActivityManager: Start proc 6558:com.android.chrome:sandboxed_process17/u0i2 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService17
+11-02 12:43:00.827   601 12301 I ActivityManager: Start proc 6573:com.android.chrome:sandboxed_process18/u0i3 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService18
+11-02 12:43:00.828   195   195 E lowmemorykiller: Error writing /proc/6461/oom_score_adj; errno=22
+11-02 12:43:00.829   601  2013 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:00.829   601  2013 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 576)
+11-02 12:43:00.829   601  2013 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService10
+11-02 12:43:00.829   601  2013 W ActivityManager: android.os.DeadObjectException: Transaction failed on small parcel; remote process probably died
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:615)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at android.app.ApplicationThreadProxy.scheduleUnbindService(ApplicationThreadNative.java:1016)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2175)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at com.android.server.am.ActiveServices.unbindServiceLocked(ActiveServices.java:1163)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at com.android.server.am.ActivityManagerService.unbindService(ActivityManagerService.java:17309)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:1145)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2795)
+11-02 12:43:00.829   601  2013 W ActivityManager: 	at android.os.Binder.execTransact(Binder.java:565)
+11-02 12:43:00.830   601  2013 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:00.830   195   195 E lowmemorykiller: Error writing /proc/6461/oom_score_adj; errno=22
+11-02 12:43:00.833   601  2013 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:00.839   601 17045 I ActivityManager: Killing 6461:com.android.chrome:sandboxed_process10/u0a35i995 (adj 900): isolated not needed
+11-02 12:43:00.841  6518  6518 W boxed_process14: type=1400 audit(0.0:3216): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:00.852  6481  6524 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:00.865  6481  6524 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:00.879  6494  6540 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:00.889  6494  6540 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:00.926  6513  6513 I cr_ChildProcessService: Creating new ChildProcessService pid=6513
+11-02 12:43:01.002  6518  6518 I cr_ChildProcessService: Creating new ChildProcessService pid=6518
+11-02 12:43:01.021  6549  6549 W boxed_process16: type=1400 audit(0.0:3217): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:01.028  6544  6544 W boxed_process15: type=1400 audit(0.0:3218): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:01.063  6293  6293 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:43:01.064  6558  6558 W boxed_process17: type=1400 audit(0.0:3219): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:01.071  6573  6573 W boxed_process18: type=1400 audit(0.0:3220): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:01.098  6159  6159 I FeedRequestManagerImpl: Request: /httpservice/noretry/DiscoverClankService/FeedQuery completed with response code: 200
+11-02 12:43:01.099  6159  6159 I TaskQueue:  - task [IMMEDIATE - d: true, b: 2]: 15
+11-02 12:43:01.099  6159  6159 I TaskQueue:  - queueTask starting immediate task
+11-02 12:43:01.099  6159  6215 I TaskQueue: Execute task [IMMEDIATE - d: true, b: 2]: 15
+11-02 12:43:01.140  6513  6596 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.141  6513  6596 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.165  6159  6215 I MainThreadRunner: Running task [FeedRequestManagerImpl consumer] on the Main Thread
+11-02 12:43:01.165  6159  6215 I TaskQueue:  - Finished 15, time 66 ms
+11-02 12:43:01.177   601   610 I art     : Background partial concurrent mark sweep GC freed 45749(2MB) AllocSpace objects, 29(748KB) LOS objects, 33% free, 15MB/23MB, paused 687us total 233.939ms
+11-02 12:43:01.184  6494  6540 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.189  6481  6524 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.205  6159  6159 I FeedProtocolAdapter: createModel, operations 33
+11-02 12:43:01.214  6513  6596 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.215  6159  6159 I TimingUtils: Task Timing   8ms, thread ui | task : convertWireProtocol | mutations : 33
+11-02 12:43:01.216  6159  6159 I TaskQueue:  - task [HEAD_RESET - d: true, b: 2]: 5
+11-02 12:43:01.216  6159  6159 I TaskQueue:  - queueTask starting immediate task
+11-02 12:43:01.217  6159  6216 I TaskQueue: Execute task [HEAD_RESET - d: true, b: 2]: 5
+11-02 12:43:01.222  6159  6216 I TaskQueue:  - task [BACKGROUND - d: true, b: 2]: 23
+11-02 12:43:01.223  6159  6216 W SessionCache: Persisted Sessions were not found
+11-02 12:43:01.227  6159  6216 I PersistentFeedStore: commitSessionMutation - Success true, Update Session $HEAD, stream structures 32
+11-02 12:43:01.239  6293  6293 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:43:01.259  6159  6216 I MainThreadRunner: Running task [SchedulerApiWrapper onReceiveNewContent] on the Main Thread
+11-02 12:43:01.260  6159  6216 I MainThreadRunner: Running task [FeedKnownContentImpl onNewContentReceived] on the Main Thread
+11-02 12:43:01.261  6159  6216 I SessionManagerMutation: Cleared Head, new creation time 11-02 12:43:01.223
+11-02 12:43:01.262  6159  6216 I TimingUtils: Task Timing  43ms, thread JardinExecutor | task : sessionMutation.commitTask:updateConsumer | mutations : 33 | userInitiated : false
+11-02 12:43:01.263  6544  6544 I cr_ChildProcessService: Creating new ChildProcessService pid=6544
+11-02 12:43:01.264  6159  6216 I TaskQueue: Cancelling starvation checks
+11-02 12:43:01.264  6159  6216 I TaskQueue:  - Finished 5, time 47 ms
+11-02 12:43:01.264  6159  6216 I TaskQueue: Execute task [USER_FACING - d: false, b: 2]: 24
+11-02 12:43:01.268  6549  6549 I cr_ChildProcessService: Creating new ChildProcessService pid=6549
+11-02 12:43:01.270 30982 31551 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.android.chrome componentName=null serviceId=36
+11-02 12:43:01.273  6159  6216 I TimeoutSessionImpl: TimeoutSession.populateModelProvider, shouldAppend false
+11-02 12:43:01.273  6159  6216 I SessionImpl: PopulateModelProvider 32 items
+11-02 12:43:01.273  6159  6216 I FeedModelProvider: FeedModelProvider - committer, structure changes 31, update changes 0
+11-02 12:43:01.274  6159  6216 I FeedModelProvider: SyntheticTokenTracker: 0, 11, 11, false
+11-02 12:43:01.274  6159  6216 I FeedSessionManagerImpl: Caching getStreamFeatures - items 31, cache misses 0, cache size 31
+11-02 12:43:01.274  6159  6216 I FeedModelProvider: Moving _session:75bf445a-fa9c-4194-98c5-bcb81cc2bbe2 to READY
+11-02 12:43:01.274  6159  6216 I MainThreadRunner: Running task [FeedModelProvider onSessionStart] on the Main Thread
+11-02 12:43:01.274  6159  6216 I FeedModelProvider: ModelProvider Mutation committed - structure changes 31, childrenToBind 31, removedChildren false, Token false
+11-02 12:43:01.279  6159  6216 I FeedSessionManagerImpl: Populate new session: _session:75bf445a-fa9c-4194-98c5-bcb81cc2bbe2, creation time 11-02 12:43:01.272
+11-02 12:43:01.280  6159  6216 I TimingUtils: Task Timing  15ms, thread JardinExecutor | task : Create/Populate New Session
+11-02 12:43:01.280  6159  6216 I TaskQueue:  - Finished 24, time 16 ms
+11-02 12:43:01.280  6159  6216 I TaskQueue: Execute task [BACKGROUND - d: false, b: 1]: 11
+11-02 12:43:01.281  6159  6216 I ContentGc: Re-enqueuing triggerContentGc; attempts(0)
+11-02 12:43:01.281  6159  6216 I TaskQueue:  - task [BACKGROUND - d: false, b: 1]: 11
+11-02 12:43:01.281  6159  6216 I TaskQueue:  - Finished 11, time 1 ms
+11-02 12:43:01.281  6159  6216 I TaskQueue: Execute task [BACKGROUND - d: false, b: 1]: 23
+11-02 12:43:01.299  6293  6293 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+11-02 12:43:01.360   195   195 E lowmemorykiller: Error writing /proc/6494/oom_score_adj; errno=22
+11-02 12:43:01.362   601   832 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService12
+11-02 12:43:01.362   601   832 W ActivityManager: android.os.DeadObjectException
+11-02 12:43:01.362   601   832 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:615)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at android.app.ApplicationThreadProxy.scheduleUnbindService(ApplicationThreadNative.java:1016)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2175)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at com.android.server.am.ActiveServices.unbindServiceLocked(ActiveServices.java:1163)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at com.android.server.am.ActivityManagerService.unbindService(ActivityManagerService.java:17309)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:1145)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2795)
+11-02 12:43:01.362   601   832 W ActivityManager: 	at android.os.Binder.execTransact(Binder.java:565)
+11-02 12:43:01.362   195   195 E lowmemorykiller: Error writing /proc/6494/oom_score_adj; errno=22
+11-02 12:43:01.366   195   195 E lowmemorykiller: Error writing /proc/6481/oom_score_adj; errno=22
+11-02 12:43:01.367   601  1452 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService11
+11-02 12:43:01.367   601  1452 W ActivityManager: android.os.DeadObjectException
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:615)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at android.app.ApplicationThreadProxy.scheduleUnbindService(ApplicationThreadNative.java:1016)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2175)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at com.android.server.am.ActiveServices.unbindServiceLocked(ActiveServices.java:1163)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at com.android.server.am.ActivityManagerService.unbindService(ActivityManagerService.java:17309)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:1145)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2795)
+11-02 12:43:01.367   601  1452 W ActivityManager: 	at android.os.Binder.execTransact(Binder.java:565)
+11-02 12:43:01.367   601  1452 I ActivityManager: Killing 6494:com.android.chrome:sandboxed_process12/u0a35i997 (adj 900): isolated not needed
+11-02 12:43:01.367   195   195 E lowmemorykiller: Error writing /proc/6481/oom_score_adj; errno=22
+11-02 12:43:01.370   195   195 E lowmemorykiller: Error opening /proc/6513/oom_score_adj; errno=2
+11-02 12:43:01.371   601   832 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService13
+11-02 12:43:01.371   601   832 W ActivityManager: android.os.DeadObjectException
+11-02 12:43:01.371   601   832 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:615)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at android.app.ApplicationThreadProxy.scheduleUnbindService(ApplicationThreadNative.java:1016)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2175)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at com.android.server.am.ActiveServices.unbindServiceLocked(ActiveServices.java:1163)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at com.android.server.am.ActivityManagerService.unbindService(ActivityManagerService.java:17309)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:1145)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2795)
+11-02 12:43:01.371   601   832 W ActivityManager: 	at android.os.Binder.execTransact(Binder.java:565)
+11-02 12:43:01.372   601   832 I ActivityManager: Killing 6481:com.android.chrome:sandboxed_process11/u0a35i996 (adj 900): isolated not needed
+11-02 12:43:01.372   195   195 E lowmemorykiller: Error opening /proc/6513/oom_score_adj; errno=2
+11-02 12:43:01.372  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6461)
+11-02 12:43:01.373  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6513)
+11-02 12:43:01.373  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6494)
+11-02 12:43:01.373  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6481)
+11-02 12:43:01.380  6159  6159 I FeedModelProvider: No children found for Cursor
+11-02 12:43:01.407   601  4262 I ActivityManager: Killing 6513:com.android.chrome:sandboxed_process13/u0a35i998 (adj 900): isolated not needed
+11-02 12:43:01.410   601 17045 D ActivityManager: cleanUpApplicationRecord -- 6481
+11-02 12:43:01.419   601  9663 D ActivityManager: cleanUpApplicationRecord -- 6494
+11-02 12:43:01.420   601 10729 D ActivityManager: cleanUpApplicationRecord -- 6461
+11-02 12:43:01.420   601   819 D ActivityManager: cleanUpApplicationRecord -- 6513
+11-02 12:43:01.421   601  7042 I ActivityManager: START u0 {act=android.intent.action.VIEW dat=http://www.britannica.com/... flg=0x10000000 cmp=com.android.chrome/com.google.android.apps.chrome.Main} from uid 2000 on display 0
+11-02 12:43:01.427  6293  6293 D AndroidRuntime: Shutting down VM
+11-02 12:43:01.452  6558  6558 I cr_ChildProcessService: Creating new ChildProcessService pid=6558
+11-02 12:43:01.452  6573  6573 I cr_ChildProcessService: Creating new ChildProcessService pid=6573
+11-02 12:43:01.454  6293  6619 W art     : Thread attaching while runtime is shutting down: Binder:6293_2
+11-02 12:43:01.454  6293  6619 I AndroidRuntime: NOTE: attach of thread 'Binder:6293_2' failed
+11-02 12:43:01.489   601  9611 D ActivityManager: cleanUpApplicationRecord -- 6297
+11-02 12:43:01.502  6544  6615 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.509  6544  6615 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.517  6159  6159 W FrameAdapter: [] Slow Bind () time: 78241 ps
+11-02 12:43:01.526   601  9643 D ActivityManager: cleanUpApplicationRecord -- 6312
+11-02 12:43:01.566   601  3864 D ActivityManager: cleanUpApplicationRecord -- 6389
+11-02 12:43:01.576  6159  6159 I MainThreadRunner: Running task [ContentDriver2] on the Main Thread with a delay of 500 milliseconds
+11-02 12:43:01.576  6159  6159 I MainThreadRunner: Running task [ContentDriver2] on the Main Thread with a delay of 500 milliseconds
+11-02 12:43:01.591  6558  6622 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.591  6558  6622 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.595  6549  6616 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.595  6549  6616 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.598  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6297)
+11-02 12:43:01.599  6573  6621 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.599  6573  6621 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.606  6518  6604 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.607  6518  6604 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:01.624  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6312)
+11-02 12:43:01.635  6544  6544 I cr_ChildProcessService: Destroying ChildProcessService pid=6544
+11-02 12:43:01.636  6544  6615 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.655  6573  6573 I cr_ChildProcessService: Destroying ChildProcessService pid=6573
+11-02 12:43:01.655  6558  6558 I cr_ChildProcessService: Destroying ChildProcessService pid=6558
+11-02 12:43:01.656  6558  6622 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.659  6573  6621 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.675  6549  6549 I cr_ChildProcessService: Destroying ChildProcessService pid=6549
+11-02 12:43:01.676  6549  6616 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.682  6159  6159 E cr_IntentUtils: getInt failed on bundle null
+11-02 12:43:01.686   601  9643 D ActivityManager: cleanUpApplicationRecord -- 6306
+11-02 12:43:01.689   601  9643 I ActivityManager: Killing 6549:com.android.chrome:sandboxed_process16/u0a35i1 (adj 0): isolated not needed
+11-02 12:43:01.689   601  9643 I ActivityManager: Killing 6573:com.android.chrome:sandboxed_process18/u0a35i3 (adj 0): isolated not needed
+11-02 12:43:01.689   601  9643 I ActivityManager: Killing 6558:com.android.chrome:sandboxed_process17/u0a35i2 (adj 0): isolated not needed
+11-02 12:43:01.689   601  9643 I ActivityManager: Killing 6544:com.android.chrome:sandboxed_process15/u0a35i0 (adj 0): isolated not needed
+11-02 12:43:01.707  6518  6604 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:01.716   601 12691 I ActivityManager: Start proc 6646:com.android.chrome:sandboxed_process19/u0i4 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService19
+11-02 12:43:01.733  6159  6159 I cr_tabmodel: Appending tabs being restored to metadata lists, 0, startingNormalCount: 2, startingIncognitoCount: 0
+11-02 12:43:01.733  6159  6159 I cr_tabmodel: Serializing tab lists; counts: 2, 0
+11-02 12:43:01.771   601  7042 I ActivityManager: Process com.android.chrome:sandboxed_process14 (pid 6518) has died
+11-02 12:43:01.771   601  7042 D ActivityManager: cleanUpApplicationRecord -- 6518
+11-02 12:43:01.771   601  7042 W ActivityManager: Scheduling restart of crashed service com.android.chrome/org.chromium.content.app.SandboxedProcessService14 in 1000ms
+11-02 12:43:01.773   601  7042 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:01.773   601  7042 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:01.773   601  7042 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:01.777   601  3864 D ActivityManager: cleanUpApplicationRecord -- 6544
+11-02 12:43:01.782   601   611 D ActivityManager: cleanUpApplicationRecord -- 6573
+11-02 12:43:01.783   601 12301 D ActivityManager: cleanUpApplicationRecord -- 6549
+11-02 12:43:01.806  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6389)
+11-02 12:43:01.813  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6306)
+11-02 12:43:01.813  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6518)
+11-02 12:43:01.818  6646  6646 W boxed_process19: type=1400 audit(0.0:3221): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:01.822 30982 31456 W Icing   : No valid account for uploading user actions
+11-02 12:43:01.861  6646  6646 I cr_ChildProcessService: Creating new ChildProcessService pid=6646
+11-02 12:43:01.864   601  4262 D ActivityManager: cleanUpApplicationRecord -- 6558
+11-02 12:43:01.869  6159  6192 I cr_BindingManager: onTrimMemory: level=15, size=0
+11-02 12:43:01.913  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6544)
+11-02 12:43:01.914  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6549)
+11-02 12:43:01.914  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6573)
+11-02 12:43:01.916  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6558)
+11-02 12:43:01.961  6646  6660 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:01.962  6646  6660 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:02.043  6432  6432 I dex2oat : dex2oat took 1.674s (threads: 2) arena alloc=1000KB (1024080B) java alloc=81KB (83240B) native alloc=559KB (573080B) free=2000KB (2048360B)
+11-02 12:43:02.094 30982 31531 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+11-02 12:43:02.113  6159  6169 I art     : Background sticky concurrent mark sweep GC freed 8058(436KB) AllocSpace objects, 5(100KB) LOS objects, 0% free, 18MB/18MB, paused 9.604ms total 20.880ms
+11-02 12:43:02.134  6159  6219 W chromium: [WARNING:spdy_session.cc(3090)] Received RST for invalid stream1
+11-02 12:43:02.429  6159  6216 I TimingUtils: Task Timing 1147ms, thread JardinExecutor | task : commitContentMutation | mutations : 32
+11-02 12:43:02.429  6159  6216 I TimingUtils: Task Timing   0ms, thread JardinExecutor | task : commitSemanticPropertiesMutation | mutations : 0
+11-02 12:43:02.429  6159  6216 I TaskQueue:  - Finished 23, time 1148 ms
+11-02 12:43:02.430  6159  6216 I TaskQueue: Execute task [BACKGROUND - d: false, b: 0]: 11
+11-02 12:43:02.431  6159  6216 I SessionCache: Determining accessible content
+11-02 12:43:02.433  6159  6216 I TimingUtils: Task Timing   3ms, thread JardinExecutor | task : ContentGc | contentItemsRemoved : 0
+11-02 12:43:02.433  6159  6216 I TaskQueue:  - Finished 11, time 3 ms
+11-02 12:43:02.441 30982 31456 E native  : document-store.cc:1328 Failed to update per-doc-data with usage report
+11-02 12:43:02.509   601 17045 I ActivityManager: Start proc 6672:com.android.chrome:sandboxed_process20/u0i5 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService20
+11-02 12:43:02.527   601 31547 I ActivityManager: Start proc 6684:com.android.chrome:sandboxed_process21/u0i6 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService21
+11-02 12:43:02.544   601 15862 I ActivityManager: Start proc 6689:com.android.chrome:sandboxed_process22/u0i7 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService22
+11-02 12:43:02.582   601   660 I ActivityManager: Start proc 6699:com.android.chrome:sandboxed_process23/u0i8 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService23
+11-02 12:43:02.612   601  7042 I ActivityManager: Start proc 6717:com.android.chrome:sandboxed_process24/u0i9 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService24
+11-02 12:43:02.652   601   612 I ActivityManager: Start proc 6735:com.android.chrome:sandboxed_process25/u0i10 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService25
+11-02 12:43:02.674  6672  6672 W boxed_process20: type=1400 audit(0.0:3222): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.718  6689  6689 W boxed_process22: type=1400 audit(0.0:3223): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.721  6684  6684 W boxed_process21: type=1400 audit(0.0:3224): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.774  6699  6699 W boxed_process23: type=1400 audit(0.0:3225): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.788  6717  6717 W boxed_process24: type=1400 audit(0.0:3226): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.800  6672  6672 I cr_ChildProcessService: Creating new ChildProcessService pid=6672
+11-02 12:43:02.835  6684  6684 I cr_ChildProcessService: Creating new ChildProcessService pid=6684
+11-02 12:43:02.838  6735  6735 W boxed_process25: type=1400 audit(0.0:3227): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:02.850  6689  6689 I cr_ChildProcessService: Creating new ChildProcessService pid=6689
+11-02 12:43:02.908  6717  6717 I cr_ChildProcessService: Creating new ChildProcessService pid=6717
+11-02 12:43:02.917  6699  6699 I cr_ChildProcessService: Creating new ChildProcessService pid=6699
+11-02 12:43:02.964  6735  6735 I cr_ChildProcessService: Creating new ChildProcessService pid=6735
+11-02 12:43:02.989  6672  6751 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:02.996  6672  6751 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.033  6684  6753 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:03.034  6684  6753 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.050  6689  6754 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:03.050  6689  6754 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.107  6672  6672 I cr_ChildProcessService: Destroying ChildProcessService pid=6672
+11-02 12:43:03.161   601   601 I ActivityManager: Killing 6672:com.android.chrome:sandboxed_process20/u0a35i5 (adj 0): isolated not needed
+11-02 12:43:03.203  6717  6756 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:03.204  6717  6756 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.205  6735  6758 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:03.210  6735  6758 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.218  6699  6757 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:03.218  6699  6757 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:03.226   601  2013 I ActivityManager: Killing 6689:com.android.chrome:sandboxed_process22/u0a35i7 (adj 0): isolated not needed
+11-02 12:43:03.227   601  2013 I ActivityManager: Killing 6684:com.android.chrome:sandboxed_process21/u0a35i6 (adj 0): isolated not needed
+11-02 12:43:03.317  6717  6756 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:03.322   195   195 E lowmemorykiller: Error writing /proc/6717/oom_score_adj; errno=22
+11-02 12:43:03.325   601  3564 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:03.325   601  3564 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 576)
+11-02 12:43:03.326   601  3564 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService24
+11-02 12:43:03.326   601  3564 W ActivityManager: android.os.DeadObjectException: Transaction failed on small parcel; remote process probably died
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:615)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at android.app.ApplicationThreadProxy.scheduleUnbindService(ApplicationThreadNative.java:1016)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2175)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at com.android.server.am.ActiveServices.unbindServiceLocked(ActiveServices.java:1163)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at com.android.server.am.ActivityManagerService.unbindService(ActivityManagerService.java:17309)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:1145)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2795)
+11-02 12:43:03.326   601  3564 W ActivityManager: 	at android.os.Binder.execTransact(Binder.java:565)
+11-02 12:43:03.326   601  3564 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:03.326   195   195 E lowmemorykiller: Error writing /proc/6717/oom_score_adj; errno=22
+11-02 12:43:03.330   601  3564 E JavaBinder: !!! FAILED BINDER TRANSACTION !!!  (parcel size = 76)
+11-02 12:43:03.330   601 12691 I ActivityManager: Killing 6717:com.android.chrome:sandboxed_process24/u0a35i9 (adj 900): isolated not needed
+11-02 12:43:03.343   601   611 D ActivityManager: cleanUpApplicationRecord -- 6717
+11-02 12:43:03.343   601   611 I ActivityManager: Killing 6735:com.android.chrome:sandboxed_process25/u0a35i10 (adj 0): isolated not needed
+11-02 12:43:03.344  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6717)
+11-02 12:43:03.357   601  2013 I ActivityManager: Killing 6699:com.android.chrome:sandboxed_process23/u0a35i8 (adj 0): isolated not needed
+11-02 12:43:03.417 30982 31456 I Icing   : Usage reports ok 1, Failed Usage reports 1, indexed 0, rejected 0
+11-02 12:43:03.424  6159  6215 I cr_omaha: Request to Server Successful. Timestamp for next request:1667392983424
+11-02 12:43:03.427   601  3864 D ActivityManager: cleanUpApplicationRecord -- 6735
+11-02 12:43:03.448   601   611 D ActivityManager: cleanUpApplicationRecord -- 6684
+11-02 12:43:03.448   601  1452 D ActivityManager: cleanUpApplicationRecord -- 6689
+11-02 12:43:03.452  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6689)
+11-02 12:43:03.454  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6735)
+11-02 12:43:03.456  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6684)
+11-02 12:43:03.461 30982 31456 W Icing   : No valid account for uploading user actions
+11-02 12:43:03.466  6159  6215 I cr_omaha: Request to Server Successful. Timestamp for next request:1667392983466
+11-02 12:43:03.466  6159  6215 I cr_omaha: Attempting to schedule next job for: Wed Nov 02 17:43:03 GMT+01:00 2022
+11-02 12:43:03.468  6159  6159 I cr_omaha: Scheduled using JobService
+11-02 12:43:03.468  6159  6159 E cr_BkgrdTaskJS: Tried finishing non-current BackgroundTask.
+11-02 12:43:03.492 30982 31456 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+11-02 12:43:03.507 30982 31456 I Icing   : Removing corpus key com.android.chrome-omnibox for package com.android.chrome
+11-02 12:43:03.755   601  3864 D ActivityManager: cleanUpApplicationRecord -- 6672
+11-02 12:43:03.759  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6672)
+11-02 12:43:03.770   601  3564 D ActivityManager: cleanUpApplicationRecord -- 6699
+11-02 12:43:03.774  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6699)
+11-02 12:43:03.829 30982 31456 I native  : document-store.cc:1654 Scored 3321 usage reports, missing_corpora 1832 update_failed 1
+11-02 12:43:03.897 30982 31456 W Icing   : No valid account for uploading user actions
+11-02 12:43:03.934 30982 31456 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+11-02 12:43:03.946 30982 31456 I Icing   : Indexing com.android.chrome-omnibox from com.android.chrome
+11-02 12:43:04.556  6159  6159 E cr_BTSPrefs: No data found for task id: 53
+11-02 12:43:04.556  6159  6159 E cr_BkgrdTaskScheduler: Task cannot be canceled because no data was found instorage or data was invalid
+11-02 12:43:04.630  6159  6169 W art     : Suspending all threads took: 9.730ms
+11-02 12:43:04.672  6159  6169 I art     : Background sticky concurrent mark sweep GC freed 104231(4MB) AllocSpace objects, 20(392KB) LOS objects, 33% free, 10MB/15MB, paused 10.743ms total 97.874ms
+11-02 12:43:05.139   785  1271 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:05.195   785  1271 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:05.278   785   981 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:05.392 30982 31456 I Icing   : Indexing done com.android.chrome-omnibox
+11-02 12:43:06.439  6159  6212 W InstanceID: Instance ID SDK is deprecated, com.android.chrome should update to use Firebase Instance ID
+11-02 12:43:09.131  6159  6159 E cr_BTSPrefs: No data found for task id: 57
+11-02 12:43:09.131  6159  6159 E cr_BkgrdTaskScheduler: Task cannot be canceled because no data was found instorage or data was invalid
+11-02 12:43:09.132  6159  6159 E cr_BTSPrefs: No data found for task id: 56
+11-02 12:43:09.132  6159  6159 E cr_BkgrdTaskScheduler: Task cannot be canceled because no data was found instorage or data was invalid
+11-02 12:43:10.439  6159  6159 I cr_tabmodel: Appending tabs being restored to metadata lists, 0, startingNormalCount: 2, startingIncognitoCount: 0
+11-02 12:43:10.439  6159  6159 I cr_tabmodel: Serializing tab lists; counts: 2, 0
+11-02 12:43:14.623  6803  6803 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:43:14.627  6803  6803 D AndroidRuntime: CheckJNI is OFF
+11-02 12:43:14.692  6803  6803 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:43:14.724  6803  6803 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:43:14.739  6803  6803 D AndroidRuntime: Calling main entry com.android.commands.monkey.Monkey
+11-02 12:43:14.806   601   614 W BroadcastQueue: Skipping deliver [background] BroadcastRecord{6dd2ad9 u-1 android.net.conn.CONNECTIVITY_CHANGE} to ReceiverList{c0f8c9e 6803 (unknown name)/2000/u-1 remote:7273823}: process crashing
+11-02 12:43:16.523  6803  6803 D MonkeyStub: translateCommand: wake
+11-02 12:43:16.664  6803  6803 D MonkeyStub: translateCommand: tap 1152 1659
+11-02 12:43:26.893  6803  6803 D MonkeyStub: translateCommand: tap 1248 1553
+11-02 12:43:27.376   785  1765 E AsyncOperation: serviceID=121, operation=GetLaunchDataOperation [CONTEXT service_id=259 ]
+11-02 12:43:27.376   785  1765 E AsyncOperation: OperationException[Status{statusCode=Not an instant app, resolution=null}]
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at aeay.a(:com.google.android.gms@203915020@20.39.15 (040406-335085812):20)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at aain.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at boex.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):2)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at sup.b(:com.google.android.gms@203915020@20.39.15 (040406-335085812):12)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at sup.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):7)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1133)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:607)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at tam.run(:com.google.android.gms@203915020@20.39.15 (040406-335085812):0)
+11-02 12:43:27.376   785  1765 E AsyncOperation: 	at java.lang.Thread.run(Thread.java:761)
+11-02 12:43:27.927   785  1710 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:27.949   785  1710 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:27.985   785 30469 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:30.728  6159  6159 I cr_tabmodel: Appending tabs being restored to metadata lists, 0, startingNormalCount: 2, startingIncognitoCount: 0
+11-02 12:43:30.729  6159  6159 I cr_tabmodel: Serializing tab lists; counts: 2, 0
+11-02 12:43:30.729  6646  6660 E chromium: [ERROR:document_metadata_extractor.cc(270)] Failed to parse json.
+11-02 12:43:32.319 30982 31551 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.android.chrome componentName=null serviceId=36
+11-02 12:43:32.338 30982 31456 W Icing   : No valid account for uploading user actions
+11-02 12:43:32.373 30982 31551 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+11-02 12:43:32.444 30982 31456 I Icing   : Usage reports ok 2, Failed Usage reports 0, indexed 2, rejected 0
+11-02 12:43:32.452 30982 31456 W Icing   : No valid account for uploading user actions
+11-02 12:43:32.476 30982 31456 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+11-02 12:43:32.477 30982 31456 I Icing   : Indexing com.android.chrome-omnibox from com.android.chrome
+11-02 12:43:32.522 30982 31456 I Icing   : Indexing done com.android.chrome-omnibox
+11-02 12:43:33.518   785   804 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:33.548   785  4082 W Icing   : isOptedInForAppHistory: empty Account Name encountered
+11-02 12:43:33.942  6803  6803 D MonkeyStub: translateCommand: touch down 614 1561
+11-02 12:43:33.970  6803  6803 D MonkeyStub: translateCommand: touch move 614 1561
+11-02 12:43:34.082  6803  6803 D MonkeyStub: translateCommand: touch move 614 1436
+11-02 12:43:34.192  6803  6803 D MonkeyStub: translateCommand: touch move 614 1311
+11-02 12:43:34.302  6803  6803 D MonkeyStub: translateCommand: touch move 614 1186
+11-02 12:43:34.413  6803  6803 D MonkeyStub: translateCommand: touch move 614 1061
+11-02 12:43:34.522  6803  6803 D MonkeyStub: translateCommand: touch move 614 937
+11-02 12:43:34.639  6803  6803 D MonkeyStub: translateCommand: touch move 614 812
+11-02 12:43:34.748  6803  6803 D MonkeyStub: translateCommand: touch move 614 687
+11-02 12:43:34.858  6803  6803 D MonkeyStub: translateCommand: touch move 614 562
+11-02 12:43:34.963  6803  6803 D MonkeyStub: translateCommand: touch move 614 437
+11-02 12:43:35.073  6803  6803 D MonkeyStub: translateCommand: touch move 614 312
+11-02 12:43:35.078  6803  6803 D MonkeyStub: translateCommand: touch up 614 312
+11-02 12:43:35.110  6803  6803 D MonkeyStub: translateCommand: touch down 614 1561
+11-02 12:43:35.122  6803  6803 D MonkeyStub: translateCommand: touch move 614 1561
+11-02 12:43:35.227  6803  6803 D MonkeyStub: translateCommand: touch move 614 1436
+11-02 12:43:35.338  6803  6803 D MonkeyStub: translateCommand: touch move 614 1311
+11-02 12:43:35.458  6803  6803 D MonkeyStub: translateCommand: touch move 614 1186
+11-02 12:43:35.566  6803  6803 D MonkeyStub: translateCommand: touch move 614 1061
+11-02 12:43:35.678  6803  6803 D MonkeyStub: translateCommand: touch move 614 937
+11-02 12:43:35.786  6803  6803 D MonkeyStub: translateCommand: touch move 614 812
+11-02 12:43:35.895  6803  6803 D MonkeyStub: translateCommand: touch move 614 687
+11-02 12:43:36.001  6803  6803 D MonkeyStub: translateCommand: touch move 614 562
+11-02 12:43:36.109  6803  6803 D MonkeyStub: translateCommand: touch move 614 437
+11-02 12:43:36.218  6803  6803 D MonkeyStub: translateCommand: touch move 614 312
+11-02 12:43:36.222  6803  6803 D MonkeyStub: translateCommand: touch up 614 312
+11-02 12:43:39.351  6803  6803 D MonkeyStub: translateCommand: touch down 614 1561
+11-02 12:43:39.362  6803  6803 D MonkeyStub: translateCommand: touch move 614 1561
+11-02 12:43:39.477  6803  6803 D MonkeyStub: translateCommand: touch move 614 1436
+11-02 12:43:39.591  6803  6803 D MonkeyStub: translateCommand: touch move 614 1311
+11-02 12:43:39.632   601  4262 I ActivityManager: Start proc 6850:com.android.chrome:sandboxed_process26/u0i11 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService26
+11-02 12:43:39.674  6850  6850 W boxed_process26: type=1400 audit(0.0:3228): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:39.697  6850  6850 I cr_ChildProcessService: Creating new ChildProcessService pid=6850
+11-02 12:43:39.702  6803  6803 D MonkeyStub: translateCommand: touch move 614 1186
+11-02 12:43:39.750  6850  6863 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:39.751  6850  6863 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:39.774  6863  6863 W CrUtilityMain: type=1400 audit(0.0:3229): avc: denied { setattr } for name="LICENSE.txt" dev="dm-2" ino=56799 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:39.778  6863  6863 W CrUtilityMain: type=1400 audit(0.0:3230): avc: denied { setattr } for name=46696C746572696E672052756C6573 dev="dm-2" ino=56502 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:39.781  6863  6863 W CrUtilityMain: type=1400 audit(0.0:3231): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=56764 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:39.784  6863  6863 W CrUtilityMain: type=1400 audit(0.0:3232): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=56506 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:39.797  6850  6863 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:39.807  6803  6803 D MonkeyStub: translateCommand: touch move 614 1061
+11-02 12:43:39.848   601 15862 I ActivityManager: Process com.android.chrome:sandboxed_process26 (pid 6850) has died
+11-02 12:43:39.848   601 15862 D ActivityManager: cleanUpApplicationRecord -- 6850
+11-02 12:43:39.865  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6850)
+11-02 12:43:39.916  6803  6803 D MonkeyStub: translateCommand: touch move 614 937
+11-02 12:43:40.062  6803  6803 D MonkeyStub: translateCommand: touch move 614 812
+11-02 12:43:40.098   601  4276 I ActivityManager: Start proc 6868:com.android.chrome:sandboxed_process27/u0i12 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService27
+11-02 12:43:40.151  6868  6868 W boxed_process27: type=1400 audit(0.0:3233): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:40.174  6803  6803 D MonkeyStub: translateCommand: touch move 614 687
+11-02 12:43:40.194  6868  6868 I cr_ChildProcessService: Creating new ChildProcessService pid=6868
+11-02 12:43:40.258  6868  6882 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:40.258  6868  6882 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:40.274  6882  6882 W CrUtilityMain: type=1400 audit(0.0:3234): avc: denied { setattr } for name="optimization-hints.pb" dev="dm-2" ino=57089 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:40.274  6882  6882 W CrUtilityMain: type=1400 audit(0.0:3235): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=57122 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:40.278  6882  6882 W CrUtilityMain: type=1400 audit(0.0:3236): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=57290 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:40.281  6803  6803 D MonkeyStub: translateCommand: touch move 614 562
+11-02 12:43:40.301  6868  6868 I cr_ChildProcessService: Destroying ChildProcessService pid=6868
+11-02 12:43:40.304  6868  6868 I art     : System.exit called, status: 0
+11-02 12:43:40.304  6868  6868 I AndroidRuntime: VM exiting with result code 0, cleanup skipped.
+11-02 12:43:40.325   601  7042 I ActivityManager: Process com.android.chrome:sandboxed_process27 (pid 6868) has died
+11-02 12:43:40.325   601  7042 D ActivityManager: cleanUpApplicationRecord -- 6868
+11-02 12:43:40.328  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6868)
+11-02 12:43:40.390  6803  6803 D MonkeyStub: translateCommand: touch move 614 437
+11-02 12:43:40.499  6803  6803 D MonkeyStub: translateCommand: touch move 614 312
+11-02 12:43:40.505  6803  6803 D MonkeyStub: translateCommand: touch up 614 312
+11-02 12:43:40.860   601  4262 I ActivityManager: Start proc 6891:com.android.chrome:sandboxed_process28/u0i13 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService28
+11-02 12:43:40.914  6891  6891 W boxed_process28: type=1400 audit(0.0:3237): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:40.944  6891  6891 I cr_ChildProcessService: Creating new ChildProcessService pid=6891
+11-02 12:43:41.043  6891  6904 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:41.044  6891  6904 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:41.055   196   196 E SELinux : avc:  denied  { find } for service=netd pid=6890 uid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:netd_service:s0 tclass=service_manager permissive=0
+11-02 12:43:41.059   196   196 E SELinux : avc:  denied  { find } for service=android.service.gatekeeper.IGateKeeperService pid=6890 uid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:gatekeeper_service:s0 tclass=service_manager permissive=0
+11-02 12:43:41.071  6904  6904 W CrUtilityMain: type=1400 audit(0.0:3238): avc: denied { setattr } for name="crl-set" dev="dm-2" ino=57170 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:41.074  6904  6904 W CrUtilityMain: type=1400 audit(0.0:3239): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=57439 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:41.074  6904  6904 W CrUtilityMain: type=1400 audit(0.0:3240): avc: denied { setattr } for name="LICENSE" dev="dm-2" ino=57595 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:41.074  6904  6904 W CrUtilityMain: type=1400 audit(0.0:3241): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=57766 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:41.084  6891  6891 I cr_ChildProcessService: Destroying ChildProcessService pid=6891
+11-02 12:43:41.085  6891  6904 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:41.110   601  1452 I ActivityManager: Process com.android.chrome:sandboxed_process28 (pid 6891) has died
+11-02 12:43:41.110   601  1452 D ActivityManager: cleanUpApplicationRecord -- 6891
+11-02 12:43:41.110  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6891)
+11-02 12:43:41.975   601 17045 I ActivityManager: Start proc 6910:com.android.chrome:sandboxed_process29/u0i14 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService29
+11-02 12:43:42.058  6910  6910 W boxed_process29: type=1400 audit(0.0:3242): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:42.083  6910  6910 I cr_ChildProcessService: Creating new ChildProcessService pid=6910
+11-02 12:43:42.120  6910  6923 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:42.121  6910  6923 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:42.131  6923  6923 W CrUtilityMain: type=1400 audit(0.0:3243): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=57498 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:42.134  6923  6923 W CrUtilityMain: type=1400 audit(0.0:3244): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=57643 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:42.140  6910  6923 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:42.143   195   195 E lowmemorykiller: Error writing /proc/6910/oom_score_adj; errno=22
+11-02 12:43:42.163   601 17045 I ActivityManager: Process com.android.chrome:sandboxed_process29 (pid 6910) has died
+11-02 12:43:42.163   601 17045 D ActivityManager: cleanUpApplicationRecord -- 6910
+11-02 12:43:42.167  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6910)
+11-02 12:43:43.317   601   612 I ActivityManager: Start proc 6928:com.android.chrome:sandboxed_process30/u0i15 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService30
+11-02 12:43:43.408  6928  6928 W boxed_process30: type=1400 audit(0.0:3245): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:43.440  6928  6928 I cr_ChildProcessService: Creating new ChildProcessService pid=6928
+11-02 12:43:43.499  6928  6941 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:43.500  6928  6941 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:43.511  6941  6941 W CrUtilityMain: type=1400 audit(0.0:3246): avc: denied { setattr } for name="download_file_types.pb" dev="dm-2" ino=58097 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:43.511  6941  6941 W CrUtilityMain: type=1400 audit(0.0:3247): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=58074 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:43.514  6941  6941 W CrUtilityMain: type=1400 audit(0.0:3248): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=58146 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:43.520  6928  6941 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:43.536  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6928)
+11-02 12:43:43.537   601  4276 I ActivityManager: Process com.android.chrome:sandboxed_process30 (pid 6928) has died
+11-02 12:43:43.537   601  4276 D ActivityManager: cleanUpApplicationRecord -- 6928
+11-02 12:43:44.998   601   611 I ActivityManager: Start proc 6945:com.android.chrome:sandboxed_process31/u0i16 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService31
+11-02 12:43:45.038  6945  6945 W boxed_process31: type=1400 audit(0.0:3249): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:45.062  6945  6945 I cr_ChildProcessService: Creating new ChildProcessService pid=6945
+11-02 12:43:45.102  6945  6958 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:45.102  6945  6958 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:45.114  6958  6958 W CrUtilityMain: type=1400 audit(0.0:3250): avc: denied { setattr } for name="ssl_error_assistant.pb" dev="dm-2" ino=57947 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:45.114  6958  6958 W CrUtilityMain: type=1400 audit(0.0:3251): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=58100 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:45.118  6958  6958 W CrUtilityMain: type=1400 audit(0.0:3252): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=57806 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:45.126  6945  6945 I cr_ChildProcessService: Destroying ChildProcessService pid=6945
+11-02 12:43:45.126  6945  6958 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:45.147   601 17045 I ActivityManager: Process com.android.chrome:sandboxed_process31 (pid 6945) has died
+11-02 12:43:45.147   601 17045 D ActivityManager: cleanUpApplicationRecord -- 6945
+11-02 12:43:45.153  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6945)
+11-02 12:43:45.558  6803  6803 D MonkeyStub: translateCommand: touch down 614 1561
+11-02 12:43:45.573  6803  6803 D MonkeyStub: translateCommand: touch move 614 1561
+11-02 12:43:45.681  6803  6803 D MonkeyStub: translateCommand: touch move 614 1436
+11-02 12:43:45.806  6803  6803 D MonkeyStub: translateCommand: touch move 614 1311
+11-02 12:43:45.919  6803  6803 D MonkeyStub: translateCommand: touch move 614 1186
+11-02 12:43:46.033  6803  6803 D MonkeyStub: translateCommand: touch move 614 1061
+11-02 12:43:46.161  6803  6803 D MonkeyStub: translateCommand: touch move 614 937
+11-02 12:43:46.270  6803  6803 D MonkeyStub: translateCommand: touch move 614 812
+11-02 12:43:46.390  6803  6803 D MonkeyStub: translateCommand: touch move 614 687
+11-02 12:43:46.501  6803  6803 D MonkeyStub: translateCommand: touch move 614 562
+11-02 12:43:46.643  6803  6803 D MonkeyStub: translateCommand: touch move 614 437
+11-02 12:43:46.763  6803  6803 D MonkeyStub: translateCommand: touch move 614 312
+11-02 12:43:46.769  6803  6803 D MonkeyStub: translateCommand: touch up 614 312
+11-02 12:43:46.804   601  7042 I ActivityManager: Start proc 6964:com.android.chrome:sandboxed_process32/u0i17 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService32
+11-02 12:43:46.844  6964  6964 W boxed_process32: type=1400 audit(0.0:3253): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:46.865  6964  6964 I cr_ChildProcessService: Creating new ChildProcessService pid=6964
+11-02 12:43:46.903  6964  6977 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:46.904  6964  6977 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:46.918  6977  6977 W CrUtilityMain: type=1400 audit(0.0:3254): avc: denied { setattr } for name="safety_tips.pb" dev="dm-2" ino=58674 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:46.918  6977  6977 W CrUtilityMain: type=1400 audit(0.0:3255): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=58678 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:46.921  6977  6977 W CrUtilityMain: type=1400 audit(0.0:3256): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=58469 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:46.926  6964  6977 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:46.933   195   195 E lowmemorykiller: Error writing /proc/6964/oom_score_adj; errno=22
+11-02 12:43:46.946   601  3564 I ActivityManager: Process com.android.chrome:sandboxed_process32 (pid 6964) has died
+11-02 12:43:46.946   601  3564 D ActivityManager: cleanUpApplicationRecord -- 6964
+11-02 12:43:46.948  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6964)
+11-02 12:43:48.834   601  4262 I ActivityManager: Start proc 6981:com.android.chrome:sandboxed_process33/u0i18 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService33
+11-02 12:43:48.878  6981  6981 W boxed_process33: type=1400 audit(0.0:3257): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:48.898  6981  6981 I cr_ChildProcessService: Creating new ChildProcessService pid=6981
+11-02 12:43:48.936  6981  6994 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:48.936  6981  6994 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:48.951  6994  6994 W CrUtilityMain: type=1400 audit(0.0:3258): avc: denied { setattr } for name=5072656C6F61642044617461 dev="dm-2" ino=58487 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:48.951  6994  6994 W CrUtilityMain: type=1400 audit(0.0:3259): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=58634 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:48.954  6994  6994 W CrUtilityMain: type=1400 audit(0.0:3260): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=58729 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:48.963  6981  6994 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:48.983   601 17045 I ActivityManager: Process com.android.chrome:sandboxed_process33 (pid 6981) has died
+11-02 12:43:48.983   601 17045 D ActivityManager: cleanUpApplicationRecord -- 6981
+11-02 12:43:48.984  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6981)
+11-02 12:43:51.094   601  7042 I ActivityManager: Start proc 6998:com.android.chrome:sandboxed_process34/u0i19 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService34
+11-02 12:43:51.151  6998  6998 W boxed_process34: type=1400 audit(0.0:3261): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:51.181  6998  6998 I cr_ChildProcessService: Creating new ChildProcessService pid=6998
+11-02 12:43:51.240  6998  7011 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:51.240  6998  7011 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:51.254  7011  7011 W CrUtilityMain: type=1400 audit(0.0:3262): avc: denied { setattr } for name="tls_deprecation_config.pb" dev="dm-2" ino=58737 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.254  7011  7011 W CrUtilityMain: type=1400 audit(0.0:3263): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=58804 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.258  7011  7011 W CrUtilityMain: type=1400 audit(0.0:3264): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=59090 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.264  6998  7011 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:51.271  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=6998)
+11-02 12:43:51.271   601 17045 I ActivityManager: Process com.android.chrome:sandboxed_process34 (pid 6998) has died
+11-02 12:43:51.271   601 17045 D ActivityManager: cleanUpApplicationRecord -- 6998
+11-02 12:43:51.797  6803  6803 D MonkeyStub: Quit requested
+11-02 12:43:51.810   601 12301 I ActivityManager: Start proc 7019:com.android.chrome:sandboxed_process35/u0i20 for service com.android.chrome/org.chromium.content.app.SandboxedProcessService35
+11-02 12:43:51.829  6803  6803 I art     : System.exit called, status: 56
+11-02 12:43:51.829  6803  6803 I AndroidRuntime: VM exiting with result code 56.
+11-02 12:43:51.850   601  4276 W WindowManager: Attempted to remove non-existing token: android.os.Binder@fab337f
+11-02 12:43:51.868  7019  7019 W boxed_process35: type=1400 audit(0.0:3265): avc: denied { getattr } for path="/data/data/com.android.chrome" dev="dm-2" ino=12190 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=dir permissive=0
+11-02 12:43:51.887  7019  7019 I cr_ChildProcessService: Creating new ChildProcessService pid=7019
+11-02 12:43:51.926  7019  7033 I cr_LibraryLoader: Loaded native library version number "85.0.4183.127"
+11-02 12:43:51.926  7019  7033 I cr_CachingUmaRecorder: Flushed 1 samples from 1 histograms.
+11-02 12:43:51.954  7033  7033 W CrUtilityMain: type=1400 audit(0.0:3266): avc: denied { setattr } for name="tl_en-us_2022-10-26_484799359_100000_index.bin" dev="dm-2" ino=59261 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.954  7033  7033 W CrUtilityMain: type=1400 audit(0.0:3267): avc: denied { setattr } for name="manifest.json" dev="dm-2" ino=59341 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.958  7033  7033 W CrUtilityMain: type=1400 audit(0.0:3268): avc: denied { setattr } for name="verified_contents.json" dev="dm-2" ino=59430 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c512,c768 tclass=file permissive=0
+11-02 12:43:51.965  7019  7019 I cr_ChildProcessService: Destroying ChildProcessService pid=7019
+11-02 12:43:51.967  7019  7033 I chromium: [INFO:child_process_service.cc(69)] ChildProcessService: Exiting child process.
+11-02 12:43:51.982   601  3564 I ActivityManager: Process com.android.chrome:sandboxed_process35 (pid 7019) has died
+11-02 12:43:51.982   601  3564 D ActivityManager: cleanUpApplicationRecord -- 7019
+11-02 12:43:51.987  6159  6159 W chromium: [WARNING:compositor_view.cc(315)] Child process died (type=6) pid=7019)
+11-02 12:44:07.859  7057  7057 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:44:07.862  7057  7057 D AndroidRuntime: CheckJNI is OFF
+11-02 12:44:07.936  7057  7057 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:44:07.968  7057  7057 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:44:07.985  7057  7057 D AndroidRuntime: Calling main entry com.android.commands.am.Am
+11-02 12:44:08.002   601 15862 I ActivityManager: Force stopping com.android.chrome appid=10035 user=0: from pid 7057
+11-02 12:44:08.002   601 15862 I ActivityManager: Killing 6220:com.android.chrome:privileged_process0/u0a35 (adj 0): stop com.android.chrome
+11-02 12:44:08.002   601 15862 D ActivityManager: cleanUpApplicationRecord -- 6220
+11-02 12:44:08.002   601 15862 W ActivityManager: Scheduling restart of crashed service com.android.chrome/org.chromium.content.app.PrivilegedProcessService0 in 1000ms
+11-02 12:44:08.003   601 15862 I ActivityManager: Killing 6159:com.android.chrome/u0a35 (adj 0): stop com.android.chrome
+11-02 12:44:08.003   601 15862 D ActivityManager: cleanUpApplicationRecord -- 6159
+11-02 12:44:08.009   601 15862 W ActivityManager: Force removing ActivityRecord{e31dfab u0 com.android.chrome/com.google.android.apps.chrome.Main t1380}: app died, no saved state
+11-02 12:44:08.016   601 15862 I ActivityManager: Killing 6646:com.android.chrome:sandboxed_process19/u0a35i4 (adj 0): isolated not needed
+11-02 12:44:08.017   601 15862 I ActivityManager: Killing 6193:com.android.chrome:sandboxed_process0/u0a35i985 (adj 0): isolated not needed
+11-02 12:44:08.043  7057  7057 D AndroidRuntime: Shutting down VM
+11-02 12:44:08.053   601 10729 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=422, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ], android.os.BinderProxy@d3986e6)
+11-02 12:44:08.053   601 10729 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=419, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ], android.os.BinderProxy@47cb427)
+11-02 12:44:08.053   601 10729 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=420, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ], android.os.BinderProxy@526c6d4)
+11-02 12:44:08.053   601 10729 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=421, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ], android.os.BinderProxy@e0f707d)
+11-02 12:44:08.054   601 10729 D GraphicsStats: Buffer count: 2
+11-02 12:44:08.055   601   650 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ LISTEN id=422, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ]
+11-02 12:44:08.057   601   650 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ LISTEN id=419, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ]
+11-02 12:44:08.058   601   650 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ LISTEN id=420, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ]
+11-02 12:44:08.058   601   650 E ConnectivityService: RemoteException caught trying to send a callback msg for NetworkRequest [ LISTEN id=421, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND] ]
+11-02 12:44:08.068  1065  1161 I OpenGLRenderer: Initialized EGL, version 1.4
+11-02 12:44:08.068  1065  1161 D OpenGLRenderer: Swap behavior 2
+11-02 12:44:08.084 26552 26552 I MemoryTrimmer: Trimming objects from memory, since app is in the background.
+11-02 12:44:08.094  1052  1052 D RegisteredNfcFServicesCache: Service unchanged, not updating
+11-02 12:44:08.177 26552 11718 I AttachedClient: Adding client event 2 to pending list.
+11-02 12:44:08.182 26552 26552 I OptInState: There is a new client and it does not support opt-in. Dropping request.
+11-02 12:44:08.186 26552 26552 I MicroDetectionWorker: Micro detection mode: [mDetectionMode: [1]].
+11-02 12:44:08.195 26552  7070 I MicroRecognitionRunner: Starting detection.
+11-02 12:44:08.195 26552 26609 I MicrophoneInputStream: mic_starting com.google.android.apps.gsa.speech.audio.ae@629028
+11-02 12:44:08.199   237   285 I SoundTriggerHwService::Module: void android::SoundTriggerHwService::Module::onCallbackEvent(const sp<android::SoundTriggerHwService::CallbackEvent> &) mClient == 0
+11-02 12:44:08.199   237  7072 I AudioFlinger: AudioFlinger's thread 0xf0812b80 ready to run
+11-02 12:44:08.201 26552 26609 I MicrophoneInputStream: mic_started com.google.android.apps.gsa.speech.audio.ae@629028
+11-02 12:44:08.245   601   612 D ActivityManager: cleanUpApplicationRecord -- 6193
+11-02 12:44:08.255   601   612 D ActivityManager: cleanUpApplicationRecord -- 6646
+11-02 12:44:08.389 26552 26552 I MicroDetectionWorker: onReady
+11-02 12:44:08.556  7073  7073 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+11-02 12:44:08.560  7073  7073 D AndroidRuntime: CheckJNI is OFF
+11-02 12:44:08.608  1065  1161 W OpenGLRenderer: Incorrectly called buildLayer on View: ShortcutAndWidgetContainer, destroying layer...
+11-02 12:44:08.635  7073  7073 D ICU     : No timezone override file found: /data/misc/zoneinfo/current/icu/icu_tzdata.dat
+11-02 12:44:08.663  7073  7073 I Radio-JNI: register_android_hardware_Radio DONE
+11-02 12:44:08.678  7073  7073 D AndroidRuntime: Calling main entry com.android.commands.pm.Pm
+11-02 12:44:08.691   601 15862 I ActivityManager: Force stopping com.android.chrome appid=10035 user=0: clear data
+11-02 12:44:08.692   601   614 I ActivityManager: Force stopping com.android.chrome appid=10035 user=-1: clearApplicationUserData
+11-02 12:44:08.733   785   785 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_ALL packageName=com.android.chrome]
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f080316
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f130448
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f080315
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f130123
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f130447
+11-02 12:44:08.735   601   613 W ResourceType: No known package when getting value for resource number 0x7f1302e4
+11-02 12:44:08.735   601   613 E ShortcutService: Ignoring excessive intent tag.
+11-02 12:44:08.738  7073  7073 I art     : System.exit called, status: 0
+11-02 12:44:08.738  7073  7073 I AndroidRuntime: VM exiting with result code 0.
+11-02 12:44:08.742  1052  1052 D RegisteredNfcFServicesCache: Service unchanged, not updating
+11-02 12:44:08.763   785  7086 I Fitness : FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_DATA_CLEARED [CONTEXT service_id=17 ]
+11-02 12:44:08.784 30982 31456 I Icing   : doRemovePackageData com.android.chrome
+11-02 12:44:08.784 30982 31456 I Icing   : Removing corpus key com.android.chrome-.implicit: for package com.android.chrome
+11-02 12:44:08.815 30982 31456 I native  : flash-index.cc:1519 Flash index sort hb 65 prefix-hits 114 -> 105 at 9.962ms
+11-02 12:44:08.848 30982 31456 I Icing   : Removing corpus key com.android.chrome-omnibox for package com.android.chrome
+11-02 12:44:08.901 30982 31456 I Icing   : Starting compaction min disk 99.930% min index 99.990%
+11-02 12:44:09.030 30982 31456 I native  : document-store.cc:1654 Scored 3323 usage reports, missing_corpora 1834 update_failed 1
+11-02 12:44:09.059 30982 31456 W native  : words-map.cc:30 INVALID_ARGUMENT: Empty URI
+11-02 12:44:09.059 30982 31456 W native  : words-map.cc:34 WordsMap was not properly initialized
+11-02 12:44:09.134 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 1: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.135 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 3: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.135 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 5: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.136 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 7: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.141 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 8: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.141 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 10: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.141 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 11: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.141 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 13: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.142 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 14: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.147 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 17: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.147 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 18: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.148 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 21: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.148 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 22: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.152 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 26: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.153 30982 31456 E native  : compactor.cc:67 Could not index embedding for docid 27: INTERNAL: Unable to find Thing Proto section 
+11-02 12:44:09.257 30982 31456 I native  : flash-index.cc:1519 Flash index sort hb 34 prefix-hits 54 -> 54 at 87.983ms
+11-02 12:44:09.286 30982 31456 W native  : words-map.cc:30 INVALID_ARGUMENT: Empty URI
+11-02 12:44:09.286 30982 31456 W native  : words-map.cc:34 WordsMap was not properly initialized
+11-02 12:44:09.337 30982 31456 I Icing   : updateResources: need to parse acol{com.android.chrome}
+11-02 12:44:09.399 30982 31456 I Icing   : Indexing com.android.chrome-omnibox from com.android.chrome
+11-02 12:44:09.411   601 12301 I ActivityManager: Start proc 7101:com.android.chrome/u0a35 for content provider com.android.chrome/com.google.android.apps.chrome.icing.IcingProvider
+11-02 12:44:09.506 30982 31456 I Icing   : Indexing done com.android.chrome-omnibox
