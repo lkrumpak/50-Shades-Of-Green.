@@ -7,8 +7,12 @@ install.packages("car")
 install.packages("moments")
 install.packages("bestNormalize")
 install.packages("effsize")
+install.packages("readr")
+install.packages("formattable")
+install.packages("e1071")
 require("dplyr")
 library(ggplot2)
+library(readr)
 library(plyr)
 library(tidyverse)
 library(ggstatsplot)
@@ -17,6 +21,9 @@ library(svglite)
 library(moments)
 library(bestNormalize)
 library(effsize)
+library(readr)
+library(formattable)
+library(e1071)
 
 # Read raw data csv files and create dataframe
 # Joule
@@ -306,176 +313,302 @@ check_normality(experiment_complete_data[which(experiment_complete_data$browser 
 check_normality(experiment_complete_data[which(experiment_complete_data$browser == "opera" & experiment_complete_data$type=="noanalytics"), ]$payload_normalized, "FPLT", "Opera, ads")
 
 #BoxPlots / Violin graphs 
+full_vs_noads_colors <- c("#ffbaba", "#a8e5e7")  # Add your desired colors here
+full_vs_noads_labels <- c("Ads & Analytics", "Without Ads")  # Add your desired labels here
 
-#Density plots for energy Consumption 
+full_vs_noanalytics_colors <- c("#ffbaba", "#a76e9d")  # Add your desired colors here
+full_vs_noanalytics_labels <- c("Ads & Analytics", "Without Analytics")  # Add your desired labels here
+
+#==========Density PLOTS==========
+
+#========Energy Consumption==========
 #=========Chrome=========
 joule_full_vs_noads_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noanalytics"), aes(x=Joule_calculated, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("Energy Consumption (Joule)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Energy Consumption (Joule)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 1500))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.000, 0.005))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
 
 joule_full_vs_noads_chrome_dp    
 #Save as pdf
-ggsave('./plots/joule_full_vs_noads_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+ggsave('./plots/joule_full_vs_noads_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm', bg='transparent')
 
+#New
 joule_full_vs_noanalytics_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noads"), aes(x=Joule_calculated, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("Energy Consumption (Joule)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Energy Consumption (Joule)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 1500))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.000, 0.005))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
 
 joule_full_vs_noanalytics_chrome_dp    
 #Save as pdf
 ggsave('./plots/joule_full_vs_noanalytics_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
-#Density polots for Performance
-fcp_full_vs_noads_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noanalytics"), aes(x=fcp, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("First Contentful Paint (ms)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+#=========Opera=========
+joule_full_vs_noads_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noanalytics"), aes(x=Joule_calculated, fill = type)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Energy Consumption (Joule)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 1500))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.000, 0.005))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
+
+joule_full_vs_noads_opera_dp    
+#Save as pdf
+ggsave('./plots/joule_full_vs_noads_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm', bg='transparent')
+
+#New
+joule_full_vs_noanalytics_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noads"), aes(x=Joule_calculated, fill = type)) +
+geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Energy Consumption (Joule)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 1500))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.000, 0.005))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
+
+joule_full_vs_noanalytics_opera_dp    
+#Save as pdf
+ggsave('./plots/joule_full_vs_noanalytics_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+
+#=========================================
+#========FCP============
+#=========Chrome=========
+fcp_full_vs_noads_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noanalytics"), aes(x=fcp, fill = type)) +
+  geom_density(alpha = 0.7 )  +
+  ylab("Density") + 
+  xlab("First Contentful Paint (ms)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 6000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00065))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
 
 fcp_full_vs_noads_chrome_dp    
 #Save as pdf
 ggsave('./plots/fcp_full_vs_noads_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
 
+#New
 fcp_full_vs_noanalytics_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noads"), aes(x=fcp, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("First Contentful Paint (ms)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("First Contentful Paint (ms)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 6000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00065))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
 
 fcp_full_vs_noanalytics_chrome_dp    
 #Save as pdf
 ggsave('./plots/fcp_full_vs_noanalytics_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
-#=========Opera=============
-joule_full_vs_noads_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noanalytics"), aes(x=Joule_calculated, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("Energy Consumption (Joule)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
-  theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
-  ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
-
-joule_full_vs_noads_opera_dp    
-#Save as pdf
-ggsave('./plots/joule_full_vs_noads_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
-
-joule_full_vs_noanalytics_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noads"), aes(x=Joule_calculated, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("Energy Consumption (Joule)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
-  theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
-  ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
-
-joule_full_vs_noanalytics_opera_dp    
-#Save as pdf
-ggsave('./plots/joule_full_vs_noanalytics_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
-
-#Density polots for Performance
+#=========Opera=========
 fcp_full_vs_noads_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noanalytics"), aes(x=fcp, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("Energy Consumption (Joule)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("First Contentful Paint (ms)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 4000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.0015))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
 
 fcp_full_vs_noads_opera_dp    
 #Save as pdf
 ggsave('./plots/fcp_full_vs_noads_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
-
+#New
 fcp_full_vs_noanalytics_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noads"), aes(x=fcp, fill = type)) +
-  geom_density(alpha = 0.4)  +
-  xlab("Density") + xlab("First Contentful Paint (ms)")+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 25))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 25))+
-  theme(axis.text.x = element_text(size = 25))+
-  theme(axis.text.y = element_text(size = 25)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("First Contentful Paint (ms)") +
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.3)
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
   ) +
-  theme(legend.text = element_text(size = 15))+
-  theme(legend.title = element_text(size = 15))+
-  scale_color_grey() +
-  scale_fill_discrete(name = "Treatment", labels = c("Ads and analytics", "Analytics"))
+  scale_x_continuous(limits = c(0, 4000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.0015))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
+
 
 fcp_full_vs_noanalytics_opera_dp    
 #Save as pdf
 ggsave('./plots/fcp_full_vs_noanalytics_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
+
+#=========FPLT===========
+#=========Chrome=========
+fplt_full_vs_noads_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noanalytics"), aes(x=V1, fill = type)) +
+  geom_density(alpha = 0.7 )  +
+  ylab("Density") + 
+  xlab("Full-Page Load Time (ms)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 18000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00025))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
+
+fplt_full_vs_noads_chrome_dp    
+#Save as pdf
+ggsave('./plots/fplt_full_vs_noads_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+
+
+#New
+fplt_full_vs_noanalytics_chrome_dp <- ggplot(subset(experiment_complete_data, browser=="chrome" & type != "noads"), aes(x=V1, fill = type)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Full-Page Load Time (ms)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 18000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00025))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
+
+fplt_full_vs_noanalytics_chrome_dp    
+#Save as pdf
+ggsave('./plots/fplt_full_vs_noanalytics_chrome_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+
+#=========Opera=========
+fplt_full_vs_noads_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noanalytics"), aes(x=V1, fill = type)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Full-Page Load Time (ms)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 18000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00025))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noads_colors, labels = full_vs_noads_labels)  # Set custom fill colors and labels
+
+fplt_full_vs_noads_opera_dp    
+#Save as pdf
+ggsave('./plots/fplt_full_vs_noads_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+
+#New
+fplt_full_vs_noanalytics_opera_dp <- ggplot(subset(experiment_complete_data, browser=="opera" & type != "noads"), aes(x=V1, fill = type)) +
+  geom_density(alpha = 0.7)  +
+  ylab("Density") + 
+  xlab("Full-Page Load Time (ms)") +
+  theme(
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 15),
+    legend.position = c(0.8, 0.8),  # Adjust legend position inside the plot
+  ) +
+  scale_x_continuous(limits = c(0, 18000))+    # Set X-axis limits
+  scale_y_continuous(limits = c(0.0000, 0.00025))+    # Set X-axis limits
+  scale_fill_manual(name = "Treatment", values = full_vs_noanalytics_colors, labels = full_vs_noanalytics_labels)  # Set custom fill colors and labels
+
+
+fplt_full_vs_noanalytics_opera_dp    
+#Save as pdf
+ggsave('./plots/fplt_full_vs_noanalytics_opera_dp.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
+
+
 ###3 Treatments in fig
-#Exploratory 
+#================================Exploratory BOXPLOTS
 joule_bp_chrome <- ggplot(subset(experiment_complete_data, browser=="chrome"), aes(x=type, y=Joule_calculated, fill = type)) +
   xlab("Treatment type") + ylab("First Contentful Paint (ms)") + ggtitle("Energy Consumption for ads and analytics in chrome") +
   geom_boxplot(outlier.size =2,) +
@@ -490,35 +623,52 @@ joule_bp_opera <- ggplot(subset(experiment_complete_data, browser=="opera"), aes
   theme(legend.position="none") +
   theme(plot.title = element_text(hjust = 0.5))
 
+
+#==================Violins
 #=============Energy Consumption violins=============
+violin_colors <- c("#FFBABA", "#A8E5E7", "#A76E9D")
+violin_labels <- c("full", "no_ads", "no_analytics")
+
 joule_violin_chrome <- ggplot(subset(experiment_complete_data, browser=="chrome"), aes(x=type, y=Joule_calculated, fill = type)) +
-  xlab("Treatment") + ylab("Energy Consumption (Joule)")+
+  xlab("Treatment") + 
+  ylab("Energy Consumption (Joule)")+
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
-  ) 
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
+  ) +
+  scale_y_continuous(limits = c(0, 1800)) +
+  ggtitle("Energy Consumption in Chrome")  
+
 joule_violin_chrome    
 #Save as pdf
 ggsave('./plots/joule_violin_chrome.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
-joule_violin_opera<- ggplot(subset(experiment_complete_data, browser=="chrome"), aes(x=type, y=Joule_calculated, fill = type)) +
-  xlab("Treatment") + ylab("Energy Consumption (Joule)")+
+#New
+joule_violin_opera<- ggplot(subset(experiment_complete_data, browser=="opera"), aes(x=type, y=Joule_calculated, fill = type)) +
+  xlab("Treatment") +
+  ylab("Energy Consumption (Joule)")+
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
-  ) 
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
+  ) +
+  scale_y_continuous(limits = c(0, 1800)) +
+  ggtitle("Energy Consumption in Opera")    # Set X-axis limits
 
 joule_violin_opera    
 #Save as pdf
@@ -527,75 +677,91 @@ ggsave('./plots/joule_violin_opera.pdf', scale = 1.5, height = 12, width = 22, u
 
 #=============FCP violins=============
 fcp_violin_chrome <- ggplot(subset(experiment_complete_data, browser=="chrome"), aes(x=type, y=fcp, fill = type)) +
-  xlab("Treatment") + ylab("FCP (ms)")  +
+  xlab("Treatment") + 
+  ylab("FCP (ms)")  +
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(plot.title = element_text(hjust = 0.5, size = 35))+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
   ) +
-  ylim(0, 6000)
+  ggtitle("FCP in Chrome") +
+  scale_y_continuous(limits = c(0, 6000)) 
+  
 fcp_violin_chrome    
 #Save as pdf
 ggsave('./plots/fcp_violin_chrome.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
+#New
 fcp_violin_opera <- ggplot(subset(experiment_complete_data, browser=="opera"), aes(x=type, y=fcp, fill = type)) +
-  xlab("Treatment") + ylab("FCP (ms)")  +
+  xlab("Treatment") +
+  ylab("FCP (ms)")  +
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(plot.title = element_text(hjust = 0.5, size = 35))+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
   ) +
-  ylim(0, 6000)
+  ggtitle("FCP in Opera") +
+  scale_y_continuous(limits = c(0, 6000)) 
 
 fcp_violin_opera    
 #Save as pdf
 ggsave('./plots/fcp_violin_opera.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
 #=============FPLT violins=============
-
 payload_violin_chrome <- ggplot(subset(experiment_complete_data, browser=="chrome"), aes(x=type, y=V1, fill = type)) +
-  xlab("Treatment") + ylab("FPLT (ms)")  +
+  xlab("Treatment") + 
+  ylab("FPLT (ms)")  +
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(plot.title = element_text(hjust = 0.5, size = 35))+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
-  ) 
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
+  ) +
+  ggtitle("FPLT in Chrome") +
+  scale_y_continuous(limits = c(0, 25000)) 
 
 payload_violin_chrome    
 #Save as pdf
 ggsave('./plots/payload_violin_chrome.pdf', scale = 1.5, height = 12, width = 22, unit='cm')
 
+#New
 payload_violin_opera <- ggplot(subset(experiment_complete_data, browser=="opera"), aes(x=type, y=V1, fill = type)) +
-  xlab("Treatment") + ylab("FPLT (ms)")  +
+  xlab("Treatment") +
+  ylab("FPLT (ms)")  +
   geom_violin(trim = FALSE, alpha=0.5,) +
-  theme(legend.position="none") +
-  theme(plot.title = element_text(hjust = 0.5, size = 35))+
-  theme(axis.title.x = element_text(hjust = 0.5, size = 40))+
-  theme(axis.title.y = element_text(hjust = 0.5, size = 40))+
-  theme(axis.text.x = element_text(size = 35))+
-  theme(axis.text.y = element_text(size = 30)) +
+  scale_fill_manual(values = violin_colors, labels = violin_labels) +  # Set custom fill colors
+  scale_x_discrete(labels = violin_labels) +  # Specify x-axis labels
   theme(
-    axis.title.y = element_text(vjust = +1.2),
-    axis.title.x = element_text(vjust = -0.6)
-  ) 
+    legend.position="none",
+    panel.background = element_rect(fill = "white"),  # Set background to white
+    axis.title.x = element_text(hjust = 0.5, size = 25),
+    axis.title.y = element_text(hjust = 0.5, size = 25, vjust = + 1.2),
+    axis.text.x = element_text(size = 25),
+    axis.text.y = element_text(size = 25),  
+    plot.title = element_text(hjust = 0.5, size = 25)  # Center and increase font size of the title
+  ) +
+  ggtitle("FPLT in Opera") +
+  scale_y_continuous(limits = c(0, 25000)) 
 
 payload_violin_opera    
 #Save as pdf
